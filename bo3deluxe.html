@@ -262,7 +262,24 @@
         </div>
       </div>
     </div>
-      <!-- <script src="assets/index.js"></script> -->
+    <!-- <script src="assets/index.js"></script> -->
+    <div id="gitment-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitment/style/default.css">
+    <script src="https://unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+      var gitment = new Gitment({
+        id: 'Comentarios', // el ID del artículo o página en la que deseas agregar comentarios
+        owner: 'static-botbo',
+        repo: 'https://github.com/static-botbo/commentsbo',
+        oauth: {
+          client_id: ' 017be0180036189c45fe ',
+          client_secret: '4c9c94193d603df0e873e4bbc0a75e04f125cb29',
+        },
+      });
+
+      gitment.render('gitment-container');
+    </script>
+
 </body>
 
 </html>
