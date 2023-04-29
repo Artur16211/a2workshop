@@ -270,27 +270,11 @@
       var gitment = new Gitment({
         id: 'articulo-prueba', // ID único para la página o artículo en el que deseas agregar comentarios
         owner: 'Artur16211', // tu nombre de usuario de GitHub
-        repo: 'codlat.github.io/', // el nombre de tu repositorio de GitHub donde se almacenarán los comentarios
+        repo: 'https://artur16211.github.io/codlat.github.io/', // el nombre de tu repositorio de GitHub donde se almacenarán los comentarios
         oauth: {
           client_id: 'd0fe814439b75f60c6a3',
           client_secret: '47d106ad9defd046b4261aeb38421b4bc0eb9638',
         },
-      });
-      
-      gitment.render('gitment-container', {
-        // Reemplaza la URL a continuación con la URL completa de tu sitio web
-        // Incluyendo el subdirectorio si tu sitio está alojado en un subdirectorio
-        // Ejemplo: https://artur16211.github.io/codlat.github.io/
-        // Nota: Debes utilizar la misma URL que estableciste en la sección de OAuth
-        // para la URL de autorización y la URL de redirección.
-        // Si no lo haces, es posible que experimentes errores de OAuth.
-        // Si tu sitio web está alojado en un subdirectorio, asegúrate de incluir el subdirectorio
-        // en la URL a continuación.
-        // Ejemplo: 'https://artur16211.github.io/codlat.github.io/'
-        // Nota: Asegúrate de que la URL a continuación termine con una barra diagonal (/).
-        // Si no lo hace, es posible que experimentes errores al cargar los comentarios.
-        // Ejemplo: 'https://artur16211.github.io/codlat.github.io/'
-        redirect_uri: 'https://artur16211.github.io/codlat.github.io/',
       });
       
       </script>
