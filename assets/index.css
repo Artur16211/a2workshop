@@ -97,3 +97,40 @@ body {
 .subcard {
   margin-top: -70px;
 }
+
+.link-muted {
+  color: #aaa;
+}
+
+.link-muted:hover {
+  color: #1266f1;
+}
+
+#comment-text {
+  background-color: #1a2431;
+}
+
+.page-link {
+  color: #ffffff;
+  background-color: #1a2431;
+  border-color: #ffffff;
+  padding: 10px;
+}
+
+.page-link:hover {
+  color: #000000;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+.page-link:active {
+  color: #ffffff;
+  background-color: #1a2431;
+  border-color: #ffffff;
+}
+
+.page-link:disabled {
+  color: #ffffff;
+  background-color: #1a2431;
+  border-color: #ffffff;
+}

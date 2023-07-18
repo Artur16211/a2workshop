@@ -87,7 +87,7 @@
   </div>
 
   <!-- Guía -->
-  <div class="container container-content text-white bg-guideheader mt-3 rounded-5">
+  <div class="container container-content text-white bg-guideheader mt-3 rounded-5 scroll-indice">
     <div class="row">
       <div class="col-9">
         <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true"
@@ -386,13 +386,43 @@
               <a class="list-group-item list-group-item-action" href="#item-7">Errores Conocidos</a>
               <a class="list-group-item list-group-item-action" href="#item-8">Workshop - Zombies</a>
               <a class="list-group-item list-group-item-action" href="#item-9">Asociados y Créditos</a>
+              <a class="list-group-item list-group-item-action" href="#item-10">Comentarios</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div id="comments-container"></div>
+
+  <div class="container container-content text-white bg-guideheader mt-3 rounded-5" id="item-10">
+    <div class="row">
+      <div class="col-9">
+        <div class="container mt-4">
+          <h2 class="fw-bold fs-2 text-center">Comentarios</h2>
+          <br>
+          <!-- # create new comment form -->
+          <div class="form-group">
+            <textarea class="form-control" id="comment-text" rows="3" placeholder="Añadir un comentario"
+              style="resize: none;"></textarea>
+          </div>
+          <div id="comments"></div>
+          <br>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#comments">1</a></li>
+              <li class="page-item"><a class="page-link"
+                  href="https://steamcommunity.com/sharedfiles/filedetails/?id=2819323099#commentthread_PublishedFile_Public_76561198851405406_2819323099_area">2</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#comments">...</a>
+              </li>
+              <li class="page-item"><a class="page-link"
+                  href="https://steamcommunity.com/sharedfiles/filedetails/?id=2819323099#commentthread_PublishedFile_Public_76561198851405406_2819323099_area">>></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
 </body>
 
 </html>
@@ -419,4 +449,13 @@
   });
 
 </script>
+
+<script>
+  var textarea = document.getElementById('comment-text');
+
+  textarea.addEventListener('click', function () {
+    window.location.href = 'https://steamcommunity.com/sharedfiles/filedetails/?id=2819323099#commentthread_PublishedFile_Public_76561198851405406_2819323099_area';
+  });
+</script>
+
 <script src="../assets/steamcomments.js"></script>
