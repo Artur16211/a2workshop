@@ -39,7 +39,7 @@
 }
 
 .container-content {
-  background-color: #1a1a1a;
+  background-color: #1b2838;
 }
 
 .container {
@@ -47,12 +47,12 @@
 }
 
 body {
-  background-color: aliceblue;
+  background-color: #1b2838;
   font-family: 'motiva-sans', sans-serif;
 }
 
 .list-group-item {
-  background-color: #1a1a1a;
+  background-color: #1a2431;
   color: white;
 }
 
@@ -67,5 +67,33 @@ body {
 }
 
 .container-content {
-  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.822)
+}
+
+.border-custom {
+  /* Cambia los colores según tus preferencias */
+  border-top: 3px solid transparent;
+  /* Borde superior predeterminado */
+  box-shadow: 0 -5px 5px -5px rgba(190, 190, 190, 0.781);
+}
+
+.text-none {
+  color: #ffffff;
+}
+
+.card-title {
+  color: #ffffff;
+}
+
+.card-text {
+  color: #ffffff;
+}
+
+.card {
+  background-color: #1a2431;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.822)
+}
+
+.subcard {
+  margin-top: -70px;
 }
