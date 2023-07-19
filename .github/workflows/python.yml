@@ -25,8 +25,9 @@ jobs:
 
     - name: Commit and push changes
       run: |
-        git config --local user.email "actions@github.com"
-        git config --local user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git config user.name "GitHub Actions"
         git add comments.json
         git commit -m "Actualización automática"
-        git push
+        git push https://$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@github.com/Artur16211/codlat.github.io.git
+
