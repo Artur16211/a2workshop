@@ -95,7 +95,7 @@ body {
 }
 
 .subcard {
-  margin-top: -70px;
+  margin-top: -120px;
 }
 
 .link-muted {
@@ -133,4 +133,54 @@ body {
   color: #ffffff;
   background-color: #1a2431;
   border-color: #ffffff;
+}
+
+.card-hover:hover {
+  border: 2px solid #bd6009;
+  position: relative;
+  z-index: 1;
+  transition: border-color 0.3s ease;
+}
+
+.rem {
+  padding: -100px;
+}
+
+.mt-10 {
+  margin-top: 230px !important;
+}
+
+.btn-primary {
+  background-color: #bd6009;
+  border-color: #bd6009;
+}
+
+.btn-primary:hover {
+  background-color: #bd6009;
+  border-color: #bd6009;
+}
+
+.btn-primary:active {
+  background-color: #bd6009;
+  border-color: #bd6009;
+}
+
+.btn-primary:disabled {
+  background-color: #bd6009;
+  border-color: #bd6009;
+}
+
+.btn-primary:focus {
+  background-color: #bd6009;
+  border-color: #bd6009;
+}
+
+.modal {
+  color: #000;
+
+}
+
+.modal-content {
+  background-color: #1a2431;
+  color: #ffffff;
 }
