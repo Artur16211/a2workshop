@@ -30,4 +30,3 @@ jobs:
         with:
           name: comments
           path: comments.json
-          zip-file: false
