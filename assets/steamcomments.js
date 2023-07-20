@@ -9,7 +9,7 @@
     return `${dia} a las ${hora}`;
   }
 
-  fetch('../comments.json')
+  fetch('https://artur16211.github.io/steamguide_comments')
     .then(function(response) {
       return response.json();
     })
