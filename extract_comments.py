@@ -1,4 +1,5 @@
-﻿import re
+import os
+import re
 import sys
 from dataclasses import dataclass
 from datetime import datetime
@@ -75,7 +76,11 @@ def save_comments_to_json(comments):
     data = {
         'comments': comments
     }
-    with open('comments.json', 'w') as file:
+    # Utiliza GITHUB_WORKSPACE para obtener la ruta del directorio raíz del repositorio
+    workspace = os.environ['GITHUB_WORKSPACE']
+    json_file_path = os.path.join(workspace, 'comments.json')
+    
+    with open(json_file_path, 'w') as file:
         json.dump(data, file)
 
 
