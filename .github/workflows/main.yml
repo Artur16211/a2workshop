@@ -1,0 +1,24 @@
+name: Ejecutar script diariamente
+
+on:
+  schedule:
+    - cron: "10 18 * * *"
+
+jobs:
+  run_script:
+    name: Ejecutar script
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v2
+
+      - name: Configurar Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x  # Cambia a la versión de Python que necesites
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Ejecutar script
+        run: python extract_comments.py
