@@ -12,14 +12,9 @@ jobs:
     steps:
       - name: Checkout del repositorio
         uses: actions/checkout@v3
-        
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
 
       - name: Configurar Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.11  # Cambia a la versión de Python que necesites
 
