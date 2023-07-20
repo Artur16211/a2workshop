@@ -24,12 +24,4 @@ jobs:
       - name: Ejecutar script y guardar archivo comments.json
         run: |
           python extract_comments.py
-          if [ -f "comments.json" ]; then
-            mkdir tmp
-            mv comments.json tmp/comments.json
-            cp tmp/comments.json $GITHUB_WORKSPACE/comments.json
-            rm -r tmp
-          else
-            echo "El archivo comments.json no fue generado correctamente."
-            exit 1
-          fi
+          mv comments.json $GITHUB_WORKSPACE/comments.json
