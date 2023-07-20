@@ -23,3 +23,6 @@ jobs:
 
       - name: Ejecutar script
         run: python extract_comments.py
+      
+      - name: Mover comments.json al directorio raíz
+        run: mv comments.json $GITHUB_WORKSPACE/comments.json
