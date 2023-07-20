@@ -23,8 +23,10 @@ jobs:
 
       - name: Ejecutar script y guardar archivo comments.json
         run: |
+          mkdir tmp
           python extract_comments.py
-          mv comments.json $GITHUB_WORKSPACE/comments.json
+          mv comments.json tmp/comments.json
+          mv tmp/comments.json $GITHUB_WORKSPACE/comments.json
         
       - name: Eliminar archivo existente
         run: rm -f comments.json
