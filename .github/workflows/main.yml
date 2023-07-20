@@ -2,7 +2,7 @@ name: extract comments
 
 on:
   schedule:
-    - cron: "15 23 * * *"
+    - cron: "18 22 * * *"
 
 jobs:
   run_script:
