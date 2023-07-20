@@ -23,6 +23,9 @@ jobs:
 
       - name: Ejecutar script
         run: python extract_comments.py
+        
+      - name: Eliminar archivo existente
+        run: rm -f comments.json
       
       - name: Mover comments.json al directorio raíz
         run: mv comments.json $GITHUB_WORKSPACE/comments.json
