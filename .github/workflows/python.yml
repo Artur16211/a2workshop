@@ -1,33 +1,24 @@
-name: Automatizar exportación JSON
+name: Ejecutar script diariamente
 
 on:
   schedule:
-    - cron: "0 9 * * *"  # Ejecutar todos los días a las 9 AM UTC (4 AM hora de México)
+    - cron: "30 18 * * *"
 
 jobs:
-  build:
+  run_script:
+    name: Ejecutar script
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout del repositorio
+        uses: actions/checkout@v2
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.x  # Especifica la versión de Python que necesitas
+      - name: Configurar Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x  # Cambia a la versión de Python que necesites
 
-    - name: Install dependencies
-      run: pip install -r requirements.txt  # Si tienes un archivo de requisitos
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
 
-    - name: Run Python script
-      run: python extract_comments.py
-
-    - name: Commit and push changes
-      run: |
-        git config user.email "actions@github.com"
-        git config user.name "GitHub Actions"
-        git add comments.json
-        git commit -m "Actualización automática"
-        git push https://$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@github.com/Artur16211/codlat.github.io.git
-
+      - name: Ejecutar script
+        run: python extract_comments.py
