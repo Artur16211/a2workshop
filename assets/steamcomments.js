@@ -15,10 +15,14 @@ function decodeToken(encodedToken) {
   return atob(encodedToken);
 }
 
+// script.js (tu archivo JavaScript)
+// script.js (tu archivo JavaScript)
 async function displayComments(jsonData) {
   try {
     const commentsObj = JSON.parse(jsonData);
     var commentsContainer = document.getElementById('comments');
+
+    const steamIconPath = 'https://www.notebookcheck.com/fileadmin/_processed_/7/1/csm_1920px_Steam_icon_logo.svg_461e44c997.png'; // Reemplaza con la ruta correcta del icono de Steam
 
     commentsObj.comments.forEach(function (comment) {
       // Crear elementos HTML para cada comentario
@@ -28,12 +32,27 @@ async function displayComments(jsonData) {
       var dFlexElement = document.createElement('div');
       dFlexElement.classList.add('d-flex', 'flex-start');
 
+      // Crear el contenedor para el avatar y el icono de Steam
+      var avatarContainer = document.createElement('div');
+      avatarContainer.classList.add('avatar-container');
+
+      // Crear el elemento para el avatar del usuario
       var avatarElement = document.createElement('img');
       avatarElement.classList.add('rounded-circle', 'shadow-1-strong', 'me-3');
       avatarElement.src = comment.avatar;
       avatarElement.alt = 'avatar';
       avatarElement.width = 60;
       avatarElement.height = 60;
+
+      // Crear el elemento para el icono de Steam
+      var steamIconElement = document.createElement('img');
+      steamIconElement.src = steamIconPath;
+      steamIconElement.alt = 'Steam';
+      steamIconElement.classList.add('steam-icon'); // Agregar clase CSS para el icono de Steam
+
+      // Agregar el avatar y el icono de Steam al contenedor
+      avatarContainer.appendChild(avatarElement);
+      avatarContainer.appendChild(steamIconElement);
 
       var contentContainer = document.createElement('div');
 
@@ -58,7 +77,7 @@ async function displayComments(jsonData) {
       contentContainer.appendChild(authorElement);
       contentContainer.appendChild(timestampElement);
       contentContainer.appendChild(contentElement);
-      dFlexElement.appendChild(avatarElement);
+      dFlexElement.appendChild(avatarContainer); // Usar el contenedor con el avatar y el icono de Steam
       dFlexElement.appendChild(contentContainer);
       commentElement.appendChild(dFlexElement);
       commentsContainer.appendChild(commentElement);
@@ -68,6 +87,8 @@ async function displayComments(jsonData) {
     console.error('Error displaying comments:', error);
   }
 }
+
+
 
 async function downloadLatestWorkflowArtifact(url, accessToken, workflowName) {
   // Try to retrieve the cached JSON data from localStorage

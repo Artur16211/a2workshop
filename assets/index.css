@@ -66,6 +66,21 @@ body {
   border-color: #363636;
 }
 
+.list-group-item.active:hover {
+  background-color: #bd6009;
+  border-color: #363636;
+}
+
+.list-group-item.active:focus {
+  background-color: #bd6009;
+  border-color: #363636;
+}
+
+.list-group-item.active:active {
+  background-color: #bd6009;
+  border-color: #363636;
+}
+
 .container-content {
   box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.822)
 }
@@ -183,4 +198,50 @@ body {
 .modal-content {
   background-color: #1a2431;
   color: #ffffff;
+}
+
+.list-group-item-action:focus,
+.list-group-item-action:hover {
+  z-index: 1;
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #1a2431
+}
+
+.accordion-item {
+  background-color: #0e131a;
+  color: #ffffff;
+}
+
+.accordion-button {
+  background-color: #1b2838;
+  color: #ffffff;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #1b2838;
+  color: #ffffff;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* styles.css (archivo de estilos CSS) */
+.avatar-container {
+  position: relative;
+  display: inline-block;
+}
+
+.steam-icon {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  /* Otros estilos que desees aplicar al icono de Steam */
 }
