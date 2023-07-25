@@ -617,22 +617,31 @@
     var indexContainer = document.getElementById('index-container');
     var cards = document.getElementsByClassName('card');
 
+    var lastCard = cards[cards.length - 1];
+
     var containerOffsetTop = indexContainer.offsetTop;
+    var lastCardOffsetTop = lastCard.offsetTop + lastCard.offsetHeight;
     var windowHeight = window.innerHeight;
 
-    // Si el scroll alcanzó o superó la posición del contenedor, se agrega la clase "position-fixed"
-    if (window.pageYOffset >= containerOffsetTop) {
+    // Verificar si el scroll alcanzó o superó la posición del final de las cards
+    var isScrollPastCards = window.pageYOffset >= lastCardOffsetTop - windowHeight;
+
+    // Verificar si el scroll está por encima del contenedor
+    var isScrollAboveContainer = window.pageYOffset < containerOffsetTop;
+
+    // Si el scroll alcanzó o superó la posición del final de las cards y no está por encima del contenedor, fijar el índice abajo
+    if (isScrollPastCards && !isScrollAboveContainer) {
       indexContainer.classList.add('position-fixed');
-      indexContainer.style.top = '0';
+      indexContainer.style.bottom = '0';
     } else {
-      // Si el scroll está por encima del contenedor, se quita la clase "position-fixed"
+      // Si el scroll está por encima del final de las cards o del contenedor, quitar la clase "position-fixed"
       indexContainer.classList.remove('position-fixed');
-      indexContainer.style.top = '';
+      indexContainer.style.bottom = '';
     }
   });
 
-
 </script>
+
 
 <script>
   var textarea = document.getElementById('comment-text');
