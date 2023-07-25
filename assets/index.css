@@ -270,3 +270,7 @@ body {
 .title {
   color: #2884cf !important;
 }
+
+t {
+  text-decoration: line-through;
+}
