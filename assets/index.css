@@ -190,16 +190,6 @@ body {
   border-color: #bd6009;
 }
 
-.modal {
-  color: #000;
-
-}
-
-.modal-content {
-  background-color: #1a2431;
-  color: #ffffff;
-}
-
 .list-group-item-action:focus,
 .list-group-item-action:hover {
   z-index: 1;
@@ -244,4 +234,24 @@ body {
   width: 25px;
   height: 25px;
   /* Otros estilos que desees aplicar al icono de Steam */
+}
+
+.btn-warning {
+  color: #ffffff;
+  background-color: #10141a !important;
+  border: #ffffff solid 4px !important;
+  padding-left: 200px !important;
+  padding-right: 200px !important;
+  padding-top: 10px !important;
+  border-bottom: none !important;
+  margin-bottom: 50px !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+.activeborder {
+  border: #bd6009 solid 4px !important;
+  border-bottom: none !important;
+  color: #bd6009;
+  background-color: #1b2838 !important;
 }
