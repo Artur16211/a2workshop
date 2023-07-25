@@ -177,11 +177,13 @@ body {
 .btn-primary {
   background-color: #bd6009;
   border-color: #bd6009;
+  color: #fdfdfd !important;
 }
 
 .btn-primary:hover {
   background-color: #bd6009;
   border-color: #bd6009;
+
 }
 
 .btn-primary:active {
@@ -204,12 +206,12 @@ body {
   z-index: 1;
   color: #ffffff;
   text-decoration: none;
-  background-color: #1a2431
+  background-color: #1a2431;
 }
 
 .accordion-item {
   background-color: #0e131a;
-  color: #ffffff;
+  color: rgb(207, 207, 207) !important;
 }
 
 .accordion-button {
