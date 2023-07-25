@@ -613,33 +613,31 @@
 <script src="../assets/bootstrap/js/bootstrap.js"></script>
 <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 <script>
+  var indexContainer = document.getElementById('index-container');
+  var cards = document.getElementsByClassName('card');
+  var lastCard = cards[cards.length - 1];
+  var containerOffsetTop = indexContainer.offsetTop;
+  var lastCardOffsetTop = lastCard.offsetTop + lastCard.offsetHeight;
+  var windowHeight = window.innerHeight;
+  var isFixed = false;
+
   window.addEventListener('scroll', function () {
-    var indexContainer = document.getElementById('index-container');
-    var cards = document.getElementsByClassName('card');
+    var scrollPosition = window.pageYOffset;
 
-    var lastCard = cards[cards.length - 1];
-
-    var containerOffsetTop = indexContainer.offsetTop;
-    var lastCardOffsetTop = lastCard.offsetTop + lastCard.offsetHeight;
-    var windowHeight = window.innerHeight;
-
-    // Verificar si el scroll alcanzó o superó la posición del final de las cards
-    var isScrollPastCards = window.pageYOffset >= lastCardOffsetTop - windowHeight;
-
-    // Verificar si el scroll está por encima del contenedor
-    var isScrollAboveContainer = window.pageYOffset < containerOffsetTop;
-
-    // Si el scroll alcanzó o superó la posición del final de las cards y no está por encima del contenedor, fijar el índice abajo
-    if (isScrollPastCards && !isScrollAboveContainer) {
+    // Si el scroll llega por debajo de la posición original y el índice no está en modo "fixed", lo fijamos.
+    if (scrollPosition >= containerOffsetTop && !isFixed) {
       indexContainer.classList.add('position-fixed');
       indexContainer.style.bottom = '0';
-    } else {
-      // Si el scroll está por encima del final de las cards o del contenedor, quitar la clase "position-fixed"
+      isFixed = true;
+    }
+
+    // Si el scroll está por encima de la posición original y el índice está en modo "fixed", lo devolvemos a su posición original.
+    if (scrollPosition < containerOffsetTop && isFixed) {
       indexContainer.classList.remove('position-fixed');
       indexContainer.style.bottom = '';
+      isFixed = false;
     }
   });
-
 </script>
 
 
