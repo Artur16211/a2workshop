@@ -251,13 +251,14 @@ body {
   color: #ffffff;
   background-color: #10141a !important;
   border: #ffffff solid 4px !important;
-  padding-left: 200px !important;
-  padding-right: 200px !important;
+  padding-left: 160px !important;
+  padding-right: 160px !important;
   padding-top: 10px !important;
   border-bottom: none !important;
   margin-bottom: 50px !important;
   border-left: none !important;
   border-right: none !important;
+  margin-left: 10% !important;
 }
 
 .activeborder {
