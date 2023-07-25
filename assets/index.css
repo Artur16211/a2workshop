@@ -53,7 +53,7 @@ body {
 
 .list-group-item {
   background-color: #1a2431;
-  color: white;
+  color: white !important;
 }
 
 .list-group-item:hover {
@@ -82,7 +82,16 @@ body {
 }
 
 .container-content {
-  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.822)
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.822);
+  color: rgb(207, 207, 207) !important;
+}
+
+.container-content b {
+  color: #ffffff !important;
+}
+
+.container-content a {
+  color: #066ccc;
 }
 
 .border-custom {
@@ -254,4 +263,8 @@ body {
   border-bottom: none !important;
   color: #bd6009;
   background-color: #1b2838 !important;
+}
+
+.title {
+  color: #2884cf !important;
 }
