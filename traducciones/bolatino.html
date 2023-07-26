@@ -1,0 +1,635 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Traducción Español Latino</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../assets/bootstrap/js/popper.min.js"></script>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <button id="sidebar-toggle" class="btn btn-primary hide-desktop">
+        <span class="iconify" data-icon="bi:person-lines-fill" style="color: white;"></span>
+    </button>
+    <script>
+        $(document).ready(function () {
+            // Obtén el botón y el panel lateral por sus ID
+            const $sidebarToggle = $("#sidebar-toggle");
+            const $sidebarClose = $("#sidebar-close");
+            const $sidebar = $("#sidebar");
+
+            // Agrega un evento click al botón de cierre
+            $sidebarClose.on("click", function () {
+                // Oculta el panel lateral
+                $sidebar.removeClass("show");
+            });
+
+            // Agrega un evento click al botón de mostrar/ocultar
+            $sidebarToggle.on("click", function () {
+                // Alterna la clase 'show' para mostrar u ocultar el panel
+                $sidebar.toggleClass("show");
+            });
+        });
+        $(window).resize(function () {
+            if ($(window).width() > 992) {
+                $("#sidebar").removeClass("show");
+            }
+        });
+    </script>
+    <div id="sidebar" class="hide-desktop bg-sidebar">
+        <button id="sidebar-close" class="btn btn-secondary">
+            <span class="iconify" data-icon="carbon:close-filled" style="color: white;" data-width="32"></span>
+        </button>
+        <div class="container mt-4">
+            <h4 class="fw-bold text-center">CREADO POR:</h4>
+            <div class="card mb-3 card-hover">
+                <div class="row g-3">
+                    <img src="../assets/img/atuburapaler.jpg" style="height: 20%;" alt="atuburapaler">
+                    <div class="card-body">
+                        <h5 class="card-title fs-6 fw-bold">atuburapaler</h5><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="text-center">
+                        <a href=" #" class="btn btn-primary mt-2">Contacto</a><br>
+                        <a href="https://steamcommunity.com/id/atubp" class="btn btn-primary mt-2 mb-2">Perfil
+                            de Steam</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-3 card-hover">
+                <div class="row g-3">
+                    <img src="../assets/img/Artur16211.jpg" style="height: 20%;" alt="Artur16211">
+                    <div class="card-body">
+                        <h5 class="card-title fs-6 fw-bold">Artur16211</h5><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <button href=" #" class="btn btn-primary mt-2">Contacto</button><br>
+                        <a href="https://steamcommunity.com/id/artur16211" class="btn btn-primary mt-2 mb-2">Perfil
+                            de Steam</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="list-example" class="list-group">
+                    <a class="list-group-item list-group-item-action fw-bold text-center">Índice</a>
+                    <a class="list-group-item list-group-item-action border-custom" href="#item-1">Introducción</a>
+                    <a class="list-group-item list-group-item-action" href="#item-3">Media</a>
+                    <a class="list-group-item list-group-item-action" href="#item-4">Mapas Disponibles</a>
+                    <a class="list-group-item list-group-item-action" href="#item-5">Descargas</a>
+                    <a class="list-group-item list-group-item-action" href="#item-6">Instalación (Steam)</a>
+                    <a class="list-group-item list-group-item-action" href="#item-7">Instalación (Plutonium)</a>
+                    <a class="list-group-item list-group-item-action" href="#item-8">Errores Conocidos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-black bg-navbar">
+        <div class="container">
+            <button class="custom-navbar-toggler navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="iconify"
+                    data-icon="streamline:interface-setting-menu-1-button-parallel-horizontal-lines-menu-navigation-three-hamburger"
+                    style="color: white;"></span>
+            </button>
+            <a class="nav-link active text-white hide-desktop titlepage" aria-current="page" href="../index.html">A2
+                Workshop</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white hide-mobile" aria-current="page" href="../index.html">A2
+                            Workshop</a>
+                    </li>
+                    <li class="nav-item dropdown hide-mobile2">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Traducciones
+                        </a>
+                        <ul class="dropdown-menu megamenu text-white bg-black" aria-labelledby="navbarDropdown">
+                            <div class="row">
+                                <div class="col">
+                                    <img class="img" src="../assets/img/bo3logo.png" alt="imagen1" width="100%" />
+                                    <ul class="list-unstyled mb-0 mt-4">
+                                        <li>
+                                            <a href="bo3deluxe.html"><img class="img-zoom rounded"
+                                                    src="../assets/img/2819323099_preview_BO3-Banner.png" alt="imagen1"
+                                                    width="100%" /></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <img class="img" src="../assets/img/bologo.png" alt="imagen1" width="100%" />
+                                    <ul class="list-unstyled mb-0 mt-4">
+                                        <li>
+                                            <img class="img-zoom rounded"
+                                                src="../assets/img/2908022077_preview_LOGOBANNER.png" alt="imagen1"
+                                                width="100%" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="hide-desktop2 nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown2" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Traducciones
+                        </a>
+                        <ul aria-labelledby="navbarDropdown2">
+                            <li>
+                                <a href="bo3deluxe.html">Call of Duty: Black Ops III - Español Latino (Mod Deluxe)</a>
+                            </li><br>
+                            <li>
+                                <a href="bo1.html">Call of Duty: Black Ops - Español Latino</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown hide-mobile2">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Guías
+                        </a>
+                        <ul class="dropdown-menu megamenu text-white bg-black" aria-labelledby="navbarDropdown">
+                            <div class="row">
+                                <div class="col">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a href="LegoDimensionsLatino.html"><img class="rounded"
+                                                    src="../assets/img/LD_logo.png" alt="imagen1" width="100%" /></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="hide-desktop2 nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown2" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Guías
+                        </a>
+                        <ul aria-labelledby="navbarDropdown2">
+                            <li>
+                                <a href="LegoDimensionsLatino.html">Lego Dimensions Español Latino PC</a>
+                            </li><br>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Contenido -->
+
+    <!-- Header -->
+    <div class="hide-mobile2 container container-content text-white bg-guideheader mt-3 rounded-5">
+        <div class="row">
+            <div class="col-2">
+                <div class="container mt-2">
+                    <img src="../assets/img/latinbo.jpg" width="70%" />
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="container mt-5">
+                    <h1 class="fw-bold fs-1">Traducción Español Latino</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10">
+                <p class="mt-3 border-custom p-3">
+
+
+                    Guía para cambiar el idioma del Call of Duty: Black Ops al Español Latino.
+
+                </p>
+            </div>
+            <div class="col-2">
+                <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2908022077"><img
+                        src="../assets/img/steam_button_icon.png" width="100%" /></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Mobile-->
+    <div class="hide-desktop2 container container-content text-white bg-guideheader mt-3 rounded-5">
+        <div class="container justify-content-center">
+            <img src="../assets/img/latinbo.jpg" class="centered-gif" />
+        </div>
+        <div class="container mt-2">
+            <h1 class="fw-bold fs-1">
+                Traducción Español Latino
+            </h1>
+        </div>
+        <p class="mt-3 border-custom p-3">
+
+
+            Guía para cambiar el idioma del Call of Duty: Black Ops al Español Latino.
+
+        </p>
+    </div>
+
+    <!-- Guía -->
+    <div class="container container-content text-white bg-guideheader mt-3 rounded-5 scroll-indice">
+        <div class="row">
+            <div class="col-9" id="changemobile">
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true"
+                    class="scrollspy-example-2" tabindex="0">
+                    <div id="item-1" class="container mt-4">
+                        <h2 class="fw-bold fs-2 title">Introducción</h2>
+                        <img src="../assets/img/2908022077_preview_LOGOBANNER.png" alt="imagen1" width="100%" />
+                        <p>
+                            Como muchos saben, el idioma Español Latino nunca existió en Black Ops, solo el Castellano,
+                            por lo que se decidió modificar los archivos del idioma Español de España e Inglés para
+                            portear su doblaje a PC.<br />
+                            Se utilizaron archivos originales del contenido descargable de Black Ops III "Zombies
+                            Chronicles" y algunos de Black Ops IIII.<br /><br />En esta Guía se explicará el proceso de
+                            instalación de esta modificación para tener los mapas de Zombies (se aplican restricciones).
+                        </p>
+                    </div>
+                    <br />
+                    <div id="item-3" class="container border-custom">
+                        <h2 class="fw-bold fs-2 mt-3 title">Media</h2>
+                        <div class="grid-container">
+                            <div class="grid-item"><iframe width="560" height="315"
+                                    src="https://www.youtube.com/embed/2TVIAs3PjPM" title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe></div>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="item-4" class="container border-custom">
+                        <h2 class="fw-bold fs-2 mt-3 title">Mapas Disponibles</h2><br>
+                        <img src="../assets/img/2908022077_preview_mapsbanner.png" alt="imagen1" width="100%" />
+                    </div>
+                    <br>
+                    <div id="item-5" class="container border-custom">
+                        <h2 class="fw-bold fs-2 mt-3 title">Descargas</h2>
+                        <p>
+                            <br>
+                            <img src="../assets/img/2908022077_preview_BOMP-BANNER.png" alt="imagen1"
+                                width="100%" /><br><br>
+                            <img src="../assets/img/2908022077_preview_BOZ-BANNER.png" alt="imagen1" width="100%" />
+                            <br><br>
+                            <u>Versión para <b>Steam:</b></u><br><br>
+                            <a href="
+                            https://www.mediafire.com/file/vedbu5z99550rrd/BO1ESPLAT_1_0.zip/file"><img
+                                    src="../assets/img/mediafire_steam.png" alt="" width="30%"></a>
+                            <br>
+                            <br>
+                            <u>Version para <b>Plutonium:</b></u><br><br>
+                            <a href="https://www.mediafire.com/file/b934f36ucqkpcl8/PLUTOT5LAT_1_0.zip/file"><img
+                                    src="../assets/img/mediafire_plutonium.png" alt="" width="30%"></a>
+                    </div>
+                    <br>
+                    <div id="item-6" class="container border-custom">
+                        <h2 class="fw-bold fs-2 mt-3 title">Instalación (Steam)</h2><br>
+                        El juego
+                        debe
+                        estar instalado en <b>English (inglés).<br><br>
+                            <img src="../assets/img/2908022077_preview_img6.png" alt="" width="70%"><br>
+                            <br></b>En tu biblioteca de Steam, dar clic derecho al juego,
+                        Administrar y Ver
+                        archivos locales.<br><br>
+                        <img src="../assets/img/2908022077_preview_img2.png" alt="" width="70%"><br><br>
+                        <br>
+                        Después de esto estando en la raíz del juego,
+                        pondremos el archivo ZIP y le daremos en extraer aquí remplazando los archivos.<br><br>
+                        <img src="../assets/img/2908022077_preview_img3.png" alt="" width="70%"><br><br>
+                    </div>
+                    <br>
+                    <div id="item-7" class="container border-custom">
+                        <h2 class="fw-bold fs-2 mt-3 title">Instalación (Plutonium)</h2><br>
+                        El juego
+                        debe
+                        estar instalado en <b>English (inglés).<br><br>
+                            <img src="../assets/img/2908022077_preview_img6.png" alt="" width="70%"><br>
+                            <br></b>En tu biblioteca de Steam, dar clic derecho al juego,
+                        Administrar y Ver
+                        archivos locales.<br><br>
+                        <img src="../assets/img/2908022077_preview_img2.png" alt="" width="70%"><br><br>
+                        <br>
+                        Después de esto estando en la raíz del juego,
+                        pondremos el archivo ZIP y le daremos en extraer aquí remplazando los archivos.<br><br>
+                        <img src="../assets/img/2908022077_preview_img8.png" alt="" width="70%"><br>
+                        <img src="../assets/img/2908022077_preview_img7.png" alt="" width="70%"><br><br>
+                        Después debemos ir a C:\Users\NombreDeUsuarioDeWindows\AppData\Local\Plutonium\storage\t5 y
+                        arrastraremos el contenido que se encuentra dentro de la carpeta Storage del ZIP a esta ruta.
+                        <br><br>
+                        <img src="../assets/img/2908022077_preview_img.png" alt="" width="70%"><br><br>
+                        <img src="../assets/img/2908022077_preview_img9.png" alt="" width="70%"><br><br>
+                    </div>
+                    <br>
+                    <div id="item-8" class="container border-custom">
+                        <h2 class="fw-bold fs-2 mt-3 title">Notas</h2><br>
+                        <p>
+                            <span class="iconify" data-icon="material-symbols:circle"
+                                style="color: rgb(179, 179, 179);"></span>
+                            Debido a un Bug en la versión actual de Plutonium T5, las voces de los personajes no se
+                            reproducen en servidores en ningún idioma, sin embargo, estas funcionan en partidas privadas
+                            y en solitario.
+                            <br><br>
+                            <span class="iconify" data-icon="material-symbols:circle"
+                                style="color: rgb(179, 179, 179);"></span>
+                            Es posible que algunos textos dentro del juego estén o en inglés o con expresiones
+                            Españolas, esto será corregido en un futuro.
+                            <br><br>
+                        </p><br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3 hide-mobile">
+                <div class="container mt-4">
+                    <h4 class="fw-bold text-center">CREADO POR:</h4>
+
+                    <div class="card mb-3 card-hover">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <img src="../assets/img/atuburapaler.jpg" style="height: 108px;" alt="atuburapaler">
+                            </div>
+                            <div class="col-6">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-6 fw-bold">atuburapaler</h5><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <a href=" #" class="btn btn-primary mt-2">Contacto</a><br>
+                                <a href="https://steamcommunity.com/id/atubp" class="btn btn-primary mt-2 mb-2">Perfil
+                                    de Steam</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3 subcard card-hover">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <img src="../assets/img/Artur16211.jpg" style="height: 108px;" alt="Artur16211">
+                            </div>
+                            <div class="col-6">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-6 fw-bold">Artur16211</h5><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <button href=" #" class="btn btn-primary mt-2">Contacto</button><br>
+                                <a href="https://steamcommunity.com/id/artur16211"
+                                    class="btn btn-primary mt-2 mb-2">Perfil
+                                    de Steam</a>
+                            </div>
+                        </div>
+
+                        <div class="row mt-10 m-3 position-absolute pb-5" id="index-container">
+                            <div id="list-example" class="list-group">
+                                <a class="list-group-item list-group-item-action fw-bold text-center">Índice</a>
+                                <a class="list-group-item list-group-item-action border-custom"
+                                    href="#item-1">Introducción</a>
+                                <a class="list-group-item list-group-item-action" href="#item-3">Media</a>
+                                <a class="list-group-item list-group-item-action" href="#item-4">Mapas Disponibles</a>
+                                <a class="list-group-item list-group-item-action" href="#item-5">Descargas</a>
+                                <a class="list-group-item list-group-item-action" href="#item-6">Instalación (Steam)</a>
+                                <a class="list-group-item list-group-item-action" href="#item-7">Instalación
+                                    (Plutonium)</a>
+                                <a class="list-group-item list-group-item-action" href="#item-8">Errores Conocidos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="container container-content text-white bg-guideheader mt-3 rounded-5 remove-index">
+            <div class="row" id="item-10">
+                <div id="changemobile2" class="col-9">
+                    <div class="container mt-4">
+                        <h2 class="fw-bold fs-2 text-center">Comentarios</h2>
+                        <br>
+                        <!-- Botones de las pestañas -->
+                        <ul class="nav nav-pills hide-mobile">
+                            <li class="nav-item"><button onclick="showTab('tab2')"
+                                    class="btn btn-warning activeborder fs-5 fw-bold" aria-current="page">Web</button>
+                            </li>
+                            <li class="nav-item"><button onclick="showTab('tab1')"
+                                    class="btn btn-warning fs-5 fw-bold">Steam</button>
+                            </li>
+                        </ul>
+                        <!-- select mobile -->
+                        <div class="hide-desktop">
+                            <select class="form-select custom-select" aria-label="Default select example">
+                                <option value="1" selected>Web</option>
+                                <option value="2">Steam</option>
+                            </select>
+                        </div>
+                        <br>
+                        <script>
+                            // when the user changes the select option, show the corresponding tab
+                            const select = document.querySelector('.hide-desktop select');
+                            select.addEventListener('change', function () {
+                                if (this.value === '1') {
+                                    showTab('tab2');
+                                } else if (this.value === '2') {
+                                    showTab('tab1');
+                                } else {
+                                    console.error('Invalid tab:', this.value);
+                                }
+                            });
+                        </script>
+                        <!-- # create new comment form -->
+                        <div class="container" id="tab1-comments">
+                            <div class="form-group">
+                                <textarea class="form-control" id="comment-text" rows="3"
+                                    placeholder="Añadir un comentario" style="resize: none;"></textarea>
+                            </div>
+                            <div id="comments"></div>
+                            <br>
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#comments">1</a></li>
+                                    <li class="page-item"><a class="page-link"
+                                            href="https://steamcommunity.com/sharedfiles/filedetails/?id=2819323099#commentthread_PublishedFile_Public_76561198851405406_2819323099_area">2</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#comments">...</a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link"
+                                            href="https://steamcommunity.com/sharedfiles/filedetails/?id=2819323099#commentthread_PublishedFile_Public_76561198851405406_2819323099_area">>></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div id="tab2-comments">
+                            <script src="https://giscus.app/client.js" data-repo="Artur16211/a2workshop"
+                                data-repo-id="R_kgDOJct79w" data-category="General"
+                                data-category-id="DIC_kwDOJct7984CYF89" data-mapping="pathname" data-strict="0"
+                                data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom"
+                                data-theme="dark_dimmed" data-lang="es" crossorigin="anonymous" async>
+                                </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function showTab(tab) {
+                const tab1Comments = document.getElementById('tab1-comments');
+                const tab2Comments = document.getElementById('tab2-comments');
+
+                if (tab === 'tab1') {
+                    tab1Comments.style.display = 'block';
+                    tab2Comments.style.display = 'none';
+                } else if (tab === 'tab2') {
+                    tab1Comments.style.display = 'none';
+                    tab2Comments.style.display = 'block';
+                } else {
+                    console.error('Invalid tab:', tab);
+                }
+            }
+
+            // when the page loads, show the first tab
+            showTab('tab2');
+
+            // when the user clicks on a tab change the background color of the warning button
+            const tabButtons = document.querySelectorAll('.nav-pills .btn');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].addEventListener('click', function () {
+                    for (let j = 0; j < tabButtons.length; j++) {
+                        tabButtons[j].classList.remove('activeborder');
+                    }
+                    this.classList.add('activeborder');
+                });
+            }
+
+        </script>
+</body>
+
+</html>
+<script src="../assets/bootstrap/js/bootstrap.js"></script>
+<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+<script>
+    var indexContainer = document.getElementById('index-container');
+    var cards = document.getElementsByClassName('card');
+    var lastCard = cards[cards.length - 1];
+    var containerOffsetTop = indexContainer.offsetTop;
+    var lastCardOffsetTop = lastCard.offsetTop + lastCard.offsetHeight;
+    var windowHeight = window.innerHeight;
+    var isFixed = false;
+
+    window.addEventListener('scroll', function () {
+        var scrollPosition = window.pageYOffset;
+
+        // Si el scroll llega por debajo de la posición original y el índice no está en modo "fixed", lo fijamos.
+        if (scrollPosition >= containerOffsetTop && !isFixed) {
+            indexContainer.classList.add('position-fixed');
+            indexContainer.style.bottom = '0';
+            isFixed = true;
+        }
+
+        // Si el scroll está por encima de la posición original y el índice está en modo "fixed", lo devolvemos a su posición original.
+        if (scrollPosition < containerOffsetTop && isFixed) {
+            indexContainer.classList.remove('position-fixed');
+            indexContainer.style.bottom = '';
+            isFixed = false;
+        }
+    });
+</script>
+
+
+<script>
+    var textarea = document.getElementById('comment-text');
+
+    textarea.addEventListener('click', function () {
+        window.location.href = 'https://steamcommunity.com/sharedfiles/filedetails/?id=2819323099#commentthread_PublishedFile_Public_76561198851405406_2819323099_area';
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.7.1/dist/jszip.min.js"></script>
+<script src="../assets/steamcomments.js"></script>
+<script>
+    // Obtén todos los elementos con la clase "card-hover"
+    var cards = document.getElementsByClassName("card-hover");
+
+    // Agrega eventos de escucha para el evento "mouseenter" (entrar) y "mouseleave" (salir)
+    for (var i = 0; i < cards.length; i++) {
+        cards[i].addEventListener("mouseenter", function () {
+            this.classList.add("card-hover"); // Agrega la clase "card-hover"
+        });
+
+        cards[i].addEventListener("mouseleave", function () {
+            this.classList.remove("card-hover"); // Elimina la clase "card-hover"
+        });
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+        // Escuchar los clics en los enlaces de la lista
+        $('.list-group-item').click(function () {
+            // Remover la clase 'active' de todos los enlaces
+            $('.list-group-item').removeClass('active');
+
+            // Agregar la clase 'active' al enlace clicado
+            $(this).addClass('active');
+        });
+    });
+</script>
+<script>
+    // Función que verifica la resolución y cambia la clase del div
+    function updateDivClass() {
+        const divElement = document.getElementById('changemobile');
+
+        if (window.matchMedia('(max-width: 1199px)').matches) {
+            // Si la resolución es menor a 1200 píxeles, cambia la clase
+            divElement.classList.remove('col-9');
+            divElement.classList.add('col');
+        } else {
+            // Si la resolución es 1200 píxeles o mayor, restablece la clase original
+            divElement.classList.remove('col');
+            divElement.classList.add('col-9');
+        }
+    }
+
+    // Llama a la función al cargar la página y cada vez que la ventana cambie de tamaño
+    window.addEventListener('load', updateDivClass);
+    window.addEventListener('resize', updateDivClass);
+
+</script>
+<script>
+    // Función que verifica la resolución y cambia la clase del div
+    function updateDivClass() {
+        const divElement = document.getElementById('changemobile2');
+
+        if (window.matchMedia('(max-width: 1199px)').matches) {
+            // Si la resolución es menor a 1200 píxeles, cambia la clase
+            divElement.classList.remove('col-9');
+            divElement.classList.add('col');
+        } else {
+            // Si la resolución es 1200 píxeles o mayor, restablece la clase original
+            divElement.classList.remove('col');
+            divElement.classList.add('col-9');
+        }
+    }
+
+    // Llama a la función al cargar la página y cada vez que la ventana cambie de tamaño
+    window.addEventListener('load', updateDivClass);
+    window.addEventListener('resize', updateDivClass);
+
+</script>
