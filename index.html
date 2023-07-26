@@ -10,19 +10,22 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-black bg-black">
+  <nav class="navbar navbar-expand-lg navbar-black bg-navbar">
     <div class="container">
-      <a class="navbar-brand text-white" href="#">A2 Workshop</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="custom-navbar-toggler navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="iconify"
+          data-icon="streamline:interface-setting-menu-1-button-parallel-horizontal-lines-menu-navigation-three-hamburger"
+          style="color: white;"></span>
       </button>
+      <a class="nav-link active text-white hide-desktop titlepage" aria-current="page" href="../index.html">A2
+        Workshop</a>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active text-white" aria-current="page" href="#">A2 Workshop</a>
+            <a class="nav-link active text-white hide-mobile" aria-current="page" href="../index.html">A2 Workshop</a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown hide-mobile2">
             <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
               data-bs-toggle="dropdown" aria-expanded="false">
               Traducciones
@@ -30,19 +33,19 @@
             <ul class="dropdown-menu megamenu text-white bg-black" aria-labelledby="navbarDropdown">
               <div class="row">
                 <div class="col">
-                  <img class="img" src="assets/img/bo3logo.png" alt="imagen1" width="100%" />
+                  <img class="img" src="../assets/img/bo3logo.png" alt="imagen1" width="100%" />
                   <ul class="list-unstyled mb-0 mt-4">
                     <li>
-                      <a href="/traducciones/bo3deluxe.html"><img class="img-zoom rounded"
-                          src="assets/img/2819323099_preview_BO3-Banner.png" alt="imagen1" width="100%" /></a>
+                      <a href="traducciones/bo3deluxe.html"><img class="img-zoom rounded"
+                          src="../assets/img/2819323099_preview_BO3-Banner.png" alt="imagen1" width="100%" /></a>
                     </li>
                   </ul>
                 </div>
                 <div class="col">
-                  <img class="img" src="assets/img/bologo.png" alt="imagen1" width="100%" />
+                  <img class="img" src="../assets/img/bologo.png" alt="imagen1" width="100%" />
                   <ul class="list-unstyled mb-0 mt-4">
                     <li>
-                      <img class="img-zoom rounded" src="assets/img/2908022077_preview_LOGOBANNER.png" alt="imagen1"
+                      <img class="img-zoom rounded" src="../assets/img/2908022077_preview_LOGOBANNER.png" alt="imagen1"
                         width="100%" />
                     </li>
                   </ul>
@@ -50,13 +53,58 @@
               </div>
             </ul>
           </li>
+          <li class="hide-desktop2 nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown2" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Traducciones
+            </a>
+            <ul aria-labelledby="navbarDropdown2">
+              <li>
+                <a href="bo3deluxe.html">Call of Duty: Black Ops III - Español Latino (Mod Deluxe)</a>
+              </li><br>
+              <li>
+                <a href="bo1.html">Call of Duty: Black Ops - Español Latino</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown hide-mobile2">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Guías
+            </a>
+            <ul class="dropdown-menu megamenu text-white bg-black" aria-labelledby="navbarDropdown">
+              <div class="row">
+                <div class="col">
+                  <ul class="list-unstyled">
+                    <li>
+                      <a href="LegoDimensionsLatino.html"><img class="rounded" src="../assets/img/LD_logo.png"
+                          alt="imagen1" width="100%" /></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </ul>
+          </li>
+          <li class="hide-desktop2 nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown2" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Guías
+            </a>
+            <ul aria-labelledby="navbarDropdown2">
+              <li>
+                <a href="LegoDimensionsLatino.html">Lego Dimensions Español Latino PC</a>
+              </li><br>
+            </ul>
+          </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="#">Contacto</a>
+            <a class="nav-link text-white" href="#">Contacto</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+  <!-- Contenido -->
   <script src="assets/bootstrap/js/bootstrap.js"></script>
   <!-- <script src="assets/index.js"></script> -->
 </body>
