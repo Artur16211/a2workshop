@@ -1,0 +1,74 @@
+﻿.activeborder {
+    border: #F6490C solid 4px !important;
+    border-bottom: none !important;
+    color: #000000;
+    background-color: #1b2838 !important;
+}
+
+.btn-primary {
+    background-color: #F6490C;
+    border-color: #F6490C;
+    color: #000000 !important;
+}
+
+.btn-primary:hover {
+    background-color: #F6490C;
+    border-color: #F6490C;
+
+}
+
+.btn-primary:active {
+    background-color: #F6490C;
+    border-color: #F6490C;
+}
+
+.btn-primary:disabled {
+    background-color: #F6490C;
+    border-color: #F6490C;
+}
+
+.btn-primary:focus {
+    background-color: #F6490C;
+    border-color: #F6490C;
+}
+
+.card-hover:hover {
+    border: 2px solid #F6490C;
+    position: relative;
+    z-index: 1;
+    transition: border-color 0.3s ease;
+}
+
+.list-group-item.active {
+    background-color: #F6490C;
+    border-color: #363636;
+    color: #ffffff !important;
+}
+
+.list-group-item.active:hover {
+    background-color: #F6490C;
+    border-color: #363636;
+}
+
+.list-group-item.active:focus {
+    background-color: #F6490C;
+    border-color: #363636;
+}
+
+.list-group-item.active:active {
+    background-color: #F6490C;
+    border-color: #363636;
+}
+
+.alert-warning b {
+    color: #000000 !important;
+}
+
+.alert-warning d {
+    font-weight: bold;
+}
+
+h4 {
+    font-weight: bold;
+    color: #d8d8d8 !important;
+}
