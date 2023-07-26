@@ -383,8 +383,16 @@ t {
 /* Estilos para el botón lateral */
 #sidebar-toggle {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 50%;
+  right: 0;
+  height: 100px;
+  width: 50px;
+  /* rounded corners for the button in the left */
+  border-radius: 10px 0px 0px 10px;
+  /* a light shadow to indicate the button is clickable */
+  box-shadow: 0 0 10px rgba(226, 226, 226, 0.411);
+  background-color: #066ccc;
+  border-color: #066ccc;
   /* Posiciona el botón en la parte derecha de la pantalla */
   z-index: 9999;
   /* Asegura que el botón esté por encima del contenido */
