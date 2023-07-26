@@ -348,3 +348,55 @@ t {
     display: none !important;
   }
 }
+
+/* Estilos para el panel lateral */
+#sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  /* Posiciona el panel fuera del área visible en la derecha */
+  width: 250px;
+  height: 100%;
+  background-color: #f7f7f7;
+  /* Color de fondo del panel */
+  transition: right 0.3s ease-in-out;
+  /* Agrega una transición suave */
+  z-index: 9999;
+  /* Asegura que el panel esté por encima del contenido */
+  padding: 20px;
+  overflow-y: auto;
+  /* Permite desplazamiento vertical cuando el contenido excede el tamaño del panel */
+}
+
+/* Estilos para ocultar el panel lateral */
+#sidebar.hide {
+  right: -300px;
+  /* Mantiene el panel fuera del área visible */
+}
+
+/* Estilos para mostrar el panel lateral */
+#sidebar.show {
+  right: 0;
+  /* Muestra el panel */
+}
+
+/* Estilos para el botón lateral */
+#sidebar-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  /* Posiciona el botón en la parte derecha de la pantalla */
+  z-index: 9999;
+  /* Asegura que el botón esté por encima del contenido */
+}
+
+.bg-sidebar {
+  background-color: #1e2836 !important;
+  border: #303030 solid 1px !important;
+  color: #c2c2c2 !important;
+}
+
+#sidebar-close {
+  background-color: transparent;
+  border: none;
+}

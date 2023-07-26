@@ -9,9 +9,109 @@
   <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="../assets/index.css" />
   <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
+  <button id="sidebar-toggle" class="btn btn-primary hide-desktop">
+    <span class="iconify" data-icon="bi:person-lines-fill" style="color: white;"></span>
+  </button>
+  <script>
+    $(document).ready(function () {
+      // Obtén el botón y el panel lateral por sus ID
+      const $sidebarToggle = $("#sidebar-toggle");
+      const $sidebarClose = $("#sidebar-close");
+      const $sidebar = $("#sidebar");
+
+      // Agrega un evento click al botón de cierre
+      $sidebarClose.on("click", function () {
+        // Oculta el panel lateral
+        $sidebar.removeClass("show");
+      });
+
+      // Agrega un evento click al botón de mostrar/ocultar
+      $sidebarToggle.on("click", function () {
+        // Alterna la clase 'show' para mostrar u ocultar el panel
+        $sidebar.toggleClass("show");
+      });
+    });
+    $(window).resize(function () {
+      if ($(window).width() > 992) {
+        $("#sidebar").removeClass("show");
+      }
+    });
+  </script>
+  <div id="sidebar" class="hide-desktop bg-sidebar">
+    <button id="sidebar-close" class="btn btn-secondary">
+      <span class="iconify" data-icon="carbon:close-filled" style="color: white;" data-width="32"></span>
+    </button>
+    <div class="container mt-4">
+      <h4 class="fw-bold text-center">CREADO POR:</h4>
+      <div class="card mb-3 card-hover">
+        <div class="row g-3">
+          <img src="../assets/img/guitargamer.jpg" style="height: 10%;" alt="guitargamer">
+          <div class="card-body">
+            <h5 class="card-title fs-6 fw-bold">Guitargamer</h5><br>
+          </div>
+        </div>
+        <div class=" text-center">
+          <a href=" #" class="btn btn-primary mt-2">Contacto</a><br>
+          <a href="https://steamcommunity.com/profiles/76561198078360579" class="btn btn-primary mt-2 mb-2">Perfil
+            de Steam</a>
+        </div>
+      </div>
+
+      <div class="card mb-3 card-hover">
+        <div class="row g-3">
+          <img src="../assets/img/atuburapaler.jpg" style="height: 20%;" alt="atuburapaler">
+          <div class="card-body">
+            <h5 class="card-title fs-6 fw-bold">atuburapaler</h5><br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="text-center">
+            <a href=" #" class="btn btn-primary mt-2">Contacto</a><br>
+            <a href="https://steamcommunity.com/id/atubp" class="btn btn-primary mt-2 mb-2">Perfil
+              de Steam</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3 card-hover">
+        <div class="row g-3">
+          <img src="../assets/img/Artur16211.jpg" style="height: 20%;" alt="Artur16211">
+          <div class="card-body">
+            <h5 class="card-title fs-6 fw-bold">Artur16211</h5><br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <button href=" #" class="btn btn-primary mt-2">Contacto</button><br>
+            <a href="https://steamcommunity.com/id/artur16211" class="btn btn-primary mt-2 mb-2">Perfil
+              de Steam</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div id="list-example" class="list-group">
+          <a class="list-group-item list-group-item-action fw-bold text-center">Índice</a>
+          <a class="list-group-item list-group-item-action border-custom" href="#item-1">Introducción</a>
+          <a class="list-group-item list-group-item-action" href="#item-2">¿Qué hay de nuevo?</a>
+          <a class="list-group-item list-group-item-action" href="#item-3">Media</a>
+          <a class="list-group-item list-group-item-action" href="#item-4">Información</a>
+          <a class="list-group-item list-group-item-action" href="#item-5">Descargas</a>
+          <a class="list-group-item list-group-item-action" href="#item-6">Instalación</a>
+          <a class="list-group-item list-group-item-action" href="#item-7">Errores Conocidos</a>
+          <a class="list-group-item list-group-item-action" href="#item-8">Workshop - Zombies</a>
+          <a class="list-group-item list-group-item-action" href="#item-9">Asociados y Créditos</a>
+          <a class="list-group-item list-group-item-action" href="#item-10">Comentarios</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
   <nav class="navbar navbar-expand-lg navbar-black bg-navbar">
     <div class="container">
       <button class="custom-navbar-toggler navbar-toggler" type="button" data-bs-toggle="collapse"
