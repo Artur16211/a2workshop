@@ -160,7 +160,7 @@ async function downloadLatestWorkflowArtifact(url, accessToken, workflowName) {
 
 // Llamamos a la función downloadLatestWorkflowArtifact() con el URL de la API de GitHub, el token de acceso y el nombre del flujo de trabajo
 const apiURL = 'https://api.github.com/repos/Artur16211/steamguide_comments/actions/artifacts';
-const encodedToken = 'Z2hwX051NzV5TFZtZ01oYlZGUElMaEFQeDRNdFRTa0xHbzExd0hHTQ==';
+const encodedToken = 'Z2l0aHViX3BhdF8xMUFQNFJIWUkwSlBZcWkzdG9vYzVRX3k0MjJnaEpZTVdtMTg2dVpVd2R1czV5UVNCMmJiak5RZG5VWW5iYjFKR1FBNlhWUlJGWk0wQWNxTmNt';
 const accessToken = decodeToken(encodedToken);
 if (accessToken) {
   const workflowName = 'comments'; // Reemplaza esto con el nombre del flujo de trabajo deseado
