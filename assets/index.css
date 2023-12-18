@@ -47,8 +47,6 @@ body {
   color: white;
 }
 
-
-
 .container-content {
   box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.822);
   color: rgb(207, 207, 207) !important;
@@ -240,6 +238,25 @@ t {
     grid-gap: 10px;
     height: 500px;
     width: 800px;
+  }
+
+  /* Establecer diferentes columnas para la cuadrícula en diferentes tamaños de pantalla */
+  @media (max-width: 1199px) {
+    .grid-container2 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .grid-container2 {
+      grid-template-columns: repeat(2, 1fr);
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-gap: 10px;
+      height: 500px;
+      width: 800px;
+    }
   }
 
   .grid-item {
