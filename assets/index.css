@@ -390,7 +390,7 @@ t {
   border: none;
   /* fix left of sidebar close button */
   position: fixed;
-  margin-left: -48px;
+  margin-left: -45px;
   margin-top: 302px;
 
 }
