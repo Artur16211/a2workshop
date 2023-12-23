@@ -20,11 +20,11 @@
                                 class="img" src="../assets/img/a2logo.png" alt="A2 Workshop" width="200px" /></a>
                     </li>
                     <li class="nav-item dropdown hide-mobile2">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown5" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Traducciones
                         </a>
-                        <ul class="dropdown-menu megamenu text-white bg-black" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu megamenu text-white bg-black" aria-labelledby="navbarDropdown5">
                             <div class="row">
                                 <div class="col">
                                     <img class="img" src="../assets/img/bo3logo.png" alt="imagen1" width="100%" />
@@ -78,11 +78,11 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown hide-mobile2">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown4" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Guías
                         </a>
-                        <ul class="dropdown-menu megamenu text-white bg-black" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu megamenu text-white bg-black" aria-labelledby="navbarDropdown4">
                             <div class="row">
                                 <!-- <div class="col">
                                     <ul class="list-unstyled">
@@ -246,7 +246,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link text-white" href="/contacto.html">Contacto</a>
+                <a class="nav-link text-white" href="/contacto.html" id="contacto">Contacto</a>
             </li>
             </ul>
         </div>
