@@ -93,7 +93,7 @@
         <div class="row">
             <div class="col-2">
                 <div class="container mt-2">
-                    <img src="../assets/img/pq2logo.jpg" width="70%" />
+                    <img class="rounded-3" src="../assets/img/pq2logo.jpg" width="70%" />
                 </div>
             </div>
             <div class="col-9">
@@ -215,12 +215,22 @@
                         <a href="https://3ds.hacks.guide/es_ES/">https://3ds.hacks.guide/es_ES/</a><br>
                         <span class="iconify" data-icon="mdi:console-line" style="color: rgb(179, 179, 179);"></span>
                         Tener el juego instalado en la consola.<br><br>
-                        <h4>Emulator Citra</h4>
+                        <h4>Emulator Citra (Android/PC)</h4>
                         <span class="iconify" data-icon="mdi:console-line" style="color: rgb(179, 179, 179);"></span>
                         Tener el emulador <b>Citra</b> instalado.<br>
-                        <a href="https://citra-emu.org/download/">https://citra-emu.org/download/</a><br>
+                        <a href="https://github.com/PabloMK7/citra/releases/latest">https://github.com/PabloMK7/citra/releases/latest</a><br>
                         <span class="iconify" data-icon="mdi:console-line" style="color: rgb(179, 179, 179);"></span>
                         Tener el juego instalado en el emulador.<br>
+                    </div>
+                    <br>
+                    <div id="item-6.1" class="container border-custom">
+                        <h2 class="fw-bold fs-2 mt-3 title">Tutoriales de instalación</h2><br>
+                        <span class="iconify" data-icon="mdi:console-line" style="color: rgb(179, 179, 179);"></span>
+                        <a href="#item-7">Instalación (3DS)</a><br><br>
+                        <span class="iconify" data-icon="mdi:console-line" style="color: rgb(179, 179, 179);"></span>
+                        <a href="#item-8">Instalación (Citra - PC)</a><br><br>
+                        <span class="iconify" data-icon="mdi:console-line" style="color: rgb(179, 179, 179);"></span>
+                        <a href="#item-9">Instalación (Citra - Android)</a><br>
                     </div>
                     <br>
                     <div id="item-7" class="container border-custom">
@@ -260,7 +270,7 @@
                     </div>
                     <br>
                     <div id="item-8" class="container border-custom">
-                        <h2 class="fw-bold fs-2 mt-3 title">Instalación (Citra)</h2><br>
+                        <h2 class="fw-bold fs-2 mt-3 title">Instalación (Citra - PC)</h2><br>
                         <span class="iconify" data-icon="mdi:console-line" style="color: rgb(179, 179, 179);"></span>
                         En el emulador <b>Citra</b> ir a <b>Emulación</b>, <b>Configurar</b> y en la pestaña
                         <b>Sistema</b>
@@ -303,14 +313,38 @@
                     </div>
                     <br>
                     <div id="item-9" class="container border-custom">
-                        <!-- <h2 class="fw-bold fs-2 mt-3 title"></h2><br>
-                        <p>
-                            <span class="iconify" data-icon="material-symbols:circle"
-                                style="color: rgb(179, 179, 179);"></span>
-                            Si quieres ayudar a corregir el parche, me puedes enviar mensaje por Discord:
-                            <b>artur16211</b>
-                            <br><br>
-                        </p><br> -->
+                        <h2 class="fw-bold fs-2 mt-3 title">Instalación (Citra - Android)</h2><br>
+                        <span class="iconify" data-icon="mdi:console-line" style="color: rgb(179, 179, 179);"></span>
+                        En un explorador de archivos, abrir la carpeta <b>citra-emu</b> abrir <b>load</b>, <b>mods</b> y
+                        <b>00040000001D7100</b> (En caso de no existir, creala).<br><br>
+                        <img src="../assets/img/android/1.png" width="70%"><br><br>
+                        <img src="../assets/img/android/3.png" width="70%">
+                        <br><br>
+
+                        <span class="iconify" data-icon="mdi:console-line" style="color: rgb(179, 179, 179);"></span>
+                        Dentro de la carpeta <b>00040000001D7100</b> se deben crear 2 carpetas "<b>exefs</b>" y "<b>romfs</b>".<br><br>
+                        <img src="../assets/img/android/4.png" width="70%">
+                        <br><hr>
+
+                        <span class="iconify" data-icon="mdi:console-line" style="color: rgb(179, 179, 179);"></span>
+                        Descargar y descomprimir el MOD en formato <b>CPK</b>.<br>
+                        <a href="#item-5">Sección descargas</a><br><br>
+                        <img src="../assets/img/android/9.png" alt="" width="70%"><br><hr>
+                        <span class="iconify" data-icon="mdi:console-line" style="color: rgb(179, 179, 179);"></span>
+                        Descargar y descomprimir los <b>PQ Patches</b>.<br>
+                        <a
+                            href="https://github.com/DeathChaos25/PQ_Patches/releases">https://github.com/PQ_Patches/</a><br><br>
+                        <span class="iconify" data-icon="mdi:console-line" style="color: rgb(179, 179, 179);"></span>
+                        Se debe descargar el archivo <b>PQ_Patches-vX.X.X-ModCpk.7z</b>.<br><br>
+                        <img src="../assets/img/android/8.png" alt="" width="70%"><br>
+                        <hr></b>
+                        
+                        <span class="iconify" data-icon="mdi:console-line"
+                            style="color: rgb(179, 179, 179);"></span>Con los PQ-patches y el mod.cpk descomprimidos. Se debe copiar el archivo exheader.bin a la carpeta <b>00040000001D7100</b>, mod.cpk (del Spanish Mod) a <b>romfs</b> y code.bin a <b>exefs</b>.<br><br>
+                        <img src="../assets/img/android/5.png" alt="" width="70%"><br><br>
+                        <img src="../assets/img/android/6.png" alt="" width="70%"><br><br>
+                        <img src="../assets/img/android/7.png" alt="" width="70%"><br><br>
+                        <br>
                     </div>
                 </div>
             </div>
@@ -347,8 +381,8 @@
                                 <a class="list-group-item list-group-item-action" href="#item-5">Descargas</a>
                                 <a class="list-group-item list-group-item-action" href="#item-6">Requerimientos</a>
                                 <a class="list-group-item list-group-item-action" href="#item-7">Instalación (3DS)</a>
-                                <a class="list-group-item list-group-item-action" href="#item-8">Instalación (CITRA)</a>
-                                <!-- <a class="list-group-item list-group-item-action" href="#item-9">Notas</a> -->
+                                <a class="list-group-item list-group-item-action" href="#item-8">Instalación (CITRA - PC)</a>
+                                <a class="list-group-item list-group-item-action" href="#item-9">Instalación (CITRA - Android)</a>
                                 <a class="list-group-item list-group-item-action" href="#item-10">Comentarios</a>
                             </div>
                         </div>
