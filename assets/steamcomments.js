@@ -1,4 +1,4 @@
-// Function to formatear la fecha y hora
+// Función para formatear la fecha y hora
 function formatFechaHora(fechaHoraString) {
   var fechaHora = new Date(fechaHoraString);
   var opcionesFecha = { day: 'numeric', month: 'long' };
@@ -10,19 +10,13 @@ function formatFechaHora(fechaHoraString) {
   return `${dia} a las ${hora}`;
 }
 
-// Function to decodificar el token desde Base64
-function decodeToken(encodedToken) {
-  return atob(encodedToken);
-}
 
-// script.js (tu archivo JavaScript)
-// script.js (tu archivo JavaScript)
 async function displayComments(jsonData) {
   try {
     const commentsObj = JSON.parse(jsonData);
     var commentsContainer = document.getElementById('comments');
 
-    const steamIconPath = 'https://www.notebookcheck.com/fileadmin/_processed_/7/1/csm_1920px_Steam_icon_logo.svg_461e44c997.png'; // Reemplaza con la ruta correcta del icono de Steam
+    const steamIconPath = 'https://www.notebookcheck.com/fileadmin/_processed_/7/1/csm_1920px_Steam_icon_logo.svg_461e44c997.png';
 
     commentsObj.comments.forEach(function (comment) {
       // Crear elementos HTML para cada comentario
@@ -88,88 +82,28 @@ async function displayComments(jsonData) {
   }
 }
 
-
-
-async function downloadLatestWorkflowArtifact(url, accessToken, workflowName) {
-  // Try to retrieve the cached JSON data from localStorage
-  const cachedJsonData = localStorage.getItem('cachedJsonData');
-
-  if (cachedJsonData) {
-    // Display the cached JSON data
-    displayComments(cachedJsonData);
-  }
-
-  // If data is not available in cache, proceed with the fetch request
+async function fetchCommentsFromWeb() {
   try {
-    const response = await fetch(url, {
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-    });
-    const data = await response.json();
-    const artifacts = data.artifacts;
-
-    if (artifacts && artifacts.length > 0) {
-      // Filter artifacts that match the specified workflow name
-      const workflowArtifacts = artifacts.filter(artifact => artifact.name === workflowName);
-
-      if (workflowArtifacts.length === 0) {
-        console.error(`No artifacts found for the workflow "${workflowName}".`);
-        return;
-      }
-
-      // Sort the workflow artifacts by creation date in descending order
-      workflowArtifacts.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-
-      // Get the latest artifact for the specified workflow
-      const latestWorkflowArtifact = workflowArtifacts[0];
-
-      // Download the latest workflow artifact
-      const downloadResponse = await fetch(latestWorkflowArtifact.archive_download_url, {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      });
-      const blob = await downloadResponse.blob();
-
-      // Extract the ZIP archive
-      const zip = new JSZip();
-      const zipData = await zip.loadAsync(blob);
-      const jsonFile = zipData.files['comments.json'];
-
-      if (!jsonFile) {
-        console.error('JSON file not found in the ZIP archive.');
-        return;
-      }
-
-      // Read the contents of the JSON file
-      const jsonData = await jsonFile.async('text');
-
-      // Show the comments directly in the page
-      displayComments(jsonData);
-
-      // Store the JSON data in localStorage
-      localStorage.setItem('cachedJsonData', jsonData);
-    } else {
-      console.error('No artifacts found.');
+    const response = await fetch('https://artur16211.github.io/steamguide_comments/comments.json');
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
     }
+    const jsonData = await response.json();
+
+    // Muestra los comentarios directamente en la página
+    displayComments(JSON.stringify(jsonData));
+
+    // Almacenar los datos JSON en el almacenamiento local para que puedan ser reutilizados
+    localStorage.setItem('cachedJsonData', JSON.stringify(jsonData));
   } catch (error) {
-    console.error('Error fetching or downloading artifact:', error);
+    console.error('Error fetching the JSON data:', error);
   }
 }
 
-// Llamamos a la función downloadLatestWorkflowArtifact() con el URL de la API de GitHub, el token de acceso y el nombre del flujo de trabajo
-const apiURL = 'https://api.github.com/repos/Artur16211/steamguide_comments/actions/artifacts';
-const encodedToken = 'Z2l0aHViX3BhdF8xMUFQNFJIWUkwSlBZcWkzdG9vYzVRX3k0MjJnaEpZTVdtMTg2dVpVd2R1czV5UVNCMmJiak5RZG5VWW5iYjFKR1FBNlhWUlJGWk0wQWNxTmNt';
-const accessToken = decodeToken(encodedToken);
-if (accessToken) {
-  const workflowName = 'comments'; // Reemplaza esto con el nombre del flujo de trabajo deseado
-  downloadLatestWorkflowArtifact(apiURL, accessToken, workflowName);
-} else {
-  console.error('Invalid token format.');
-}
+// Llamamos a la función fetchCommentsFromWeb() para obtener los comentarios desde la URL
+fetchCommentsFromWeb();
 
-// Clear the cached data when the page is reloaded
+// Limpiar los datos almacenados en caché cuando la página se recargue
 window.addEventListener('beforeunload', () => {
   localStorage.removeItem('cachedJsonData');
 });
