@@ -1,5 +1,4 @@
 ﻿function generarNavbar() {
-    // Crea el código HTML del navbar utilizando Bootstrap
     const navbar = `
         <nav class="navbar navbar-expand-lg navbar-black bg-navbar">
         <div class="container">
@@ -22,36 +21,41 @@
                     <li class="nav-item dropdown hide-mobile2">
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown5" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            Traducciones
+                            Proyectos
                         </a>
                         <ul class="dropdown-menu megamenu text-white bg-black" aria-labelledby="navbarDropdown5">
                             <div class="row">
                                 <div class="col">
-                                    <img class="img" src="../assets/img/bo3logo.png" alt="imagen1" width="100%" />
                                     <ul class="list-unstyled mb-0 mt-4">
                                         <li>
-                                            <a href="../traducciones/bo3deluxe.html"><img class="img-zoom rounded"
-                                                    src="../assets/img/2819323099_preview_BO3-Banner.png" alt="imagen1"
+                                            <a href="../traducciones/blackopsiiilatino.html"><img class="img-zoom rounded"
+                                                    src="../assets/img/bo3logo.png" alt="imagen1"
                                                     width="100%" /></a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="col">
-                                    <img class="img" src="../assets/img/bologo.png" alt="imagen1" width="100%" />
                                     <ul class="list-unstyled mb-0 mt-4">
                                         <li>
-                                            <a href="../traducciones/bolatino.html"><img class="img-zoom rounded"
-                                                    src="../assets/img/2908022077_preview_LOGOBANNER.png" alt="imagen1"
+                                            <a href="../traducciones/blackopslatino.html"><img class="img-zoom rounded"
+                                                    src="../assets/img/latinbo.jpg" alt="imagen1"
                                                     width="100%" /></a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="col">
-                                    <img class="img" src="../assets/img/p5.png" alt="imagen1" width="100%" />
                                     <ul class="list-unstyled mb-0 mt-4">
                                         <li>
                                             <a href="https://gamebanana.com/mods/54473"><img class="img-zoom rounded"
-                                                    src="../assets/img/gamebanana.png" alt="imagen1" width="100%" /></a>
+                                                    src="../assets/img/p5full.jpg" alt="imagen1" width="100%" /></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <ul class="list-unstyled mb-0 mt-4">
+                                        <li>
+                                            <a href="../traducciones/pq2espanol.html"><img class="img-zoom rounded"
+                                                    src="../assets/img/pq2.png" alt="imagen1" width="100%" /></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -61,65 +65,24 @@
                     <li class="hide-desktop2 nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown2" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            Traducciones
+                            Proyectos
                         </a>
                         <ul aria-labelledby="navbarDropdown2">
                             <li>
-                                <a href="../traducciones/bo3deluxe.html">Call of Duty: Black Ops III - Español Latino
-                                    (Mod Deluxe)</a>
+                                <a href="../traducciones/blackopsiiilatino.html">Call of Duty: Black Ops III PC Español Latino</a>
                             </li><br>
                             <li>
-                                <a href="../traducciones/bolatino.html">Call of Duty: Black Ops - Español Latino</a>
+                                <a href="../traducciones/blackopslatino.html">Call of Duty: Black Ops - Español Latino</a>
                             </li>
                             <br>
                             <li>
                                 <a href="https://gamebanana.com/mods/54473">Persona 5 PS3 - Español Mod</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown hide-mobile2">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown4" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Guías
-                        </a>
-                        <ul class="dropdown-menu megamenu text-white bg-black" aria-labelledby="navbarDropdown4">
-                            <div class="row">
-                                <!-- <div class="col">
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            <a href="../guias/legodimensionslatino.html"><img class="rounded"
-                                                    src="../assets/img/LD_logo.png" alt="imagen1" width="100%" /></a>
-                                        </li>
-                                    </ul>
-                                </div> -->
-                                <div class="col">
-                                    <ul class="list-unstyled">
-                                        <li>
-                                            <a href="../guias/pq2espanol.html"><img class="rounded"
-                                                    src="../assets/img/pq2esp.png" alt="imagen1" width="100%" /></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </ul>
-                    </li>
-                    <li class="hide-desktop2 nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown2" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Guías
-                        </a>
-                        <!-- <ul aria-labelledby="navbarDropdown2">
-                            <li>
-                                <a href="../guias/legodimensionslatino.html">Lego Dimensions - Español Latino PC</a>
                             </li><br>
-                        </ul> -->
-                        <ul aria-labelledby="navbarDropdown2">
                             <li>
-                                <a href="../guias/pq2espanol.html">Persona Q2 - Spanish Mod</a>
+                                <a href="../traducciones/pq2espanol.html">Persona Q2 - Traducción al Español</a>
                             </li><br>
                         </ul>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link text-white" href="../contacto.html">Contacto</a>
                     </li>
@@ -150,77 +113,39 @@
             <li class="nav-item dropdown hide-mobile2">
                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">
-                Traducciones
+                Proyectos
                 </a>
                 <ul class="dropdown-menu megamenu text-white bg-black" aria-labelledby="navbarDropdown">
                 <div class="row">
                     <div class="col">
-                    <img class="img" src="assets/img/bo3logo.png" alt="imagen1" width="100%" />
                     <ul class="list-unstyled mb-0 mt-4">
                         <li>
-                        <a href="/traducciones/bo3deluxe.html"><img class="img-zoom rounded"
-                            src="assets/img/2819323099_preview_BO3-Banner.png" alt="imagen1" width="100%" /></a>
+                        <a href="/traducciones/blackopsiiilatino.html"><img class="img-zoom rounded"
+                            src="assets/img/bo3logo.png" alt="imagen1" width="100%" /></a>
                         </li>
                     </ul>
                     </div>
                     <div class="col">
-                    <img class="img" src="assets/img/bologo.png" alt="imagen1" width="100%" />
                     <ul class="list-unstyled mb-0 mt-4">
                         <li>
-                        <a href="/traducciones/bolatino.html"><img class="img-zoom rounded"
-                            src="assets/img/2908022077_preview_LOGOBANNER.png" alt="imagen1" width="100%" /></a>
+                        <a href="/traducciones/blackopslatino.html"><img class="img-zoom rounded"
+                            src="assets/img/latinbo.jpg" alt="imagen1" width="100%" /></a>
                         </li>
                     </ul>
                     </div>
                     <div class="col">
-                    <img class="img" src="assets/img/p5.png" alt="imagen1" width="100%" />
                     <ul class="list-unstyled mb-0 mt-4">
                         <li>
                         <a href="https://gamebanana.com/mods/54473"><img class="img-zoom rounded"
-                            src="assets/img/gamebanana.png" alt="imagen1" width="100%" /></a>
+                            src="assets/img/p5full.jpg" alt="imagen1" width="100%" /></a>
                         </li>
                     </ul>
                     </div>
-                </div>
-                </ul>
-            </li>
-            <li class="hide-desktop2 nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown2" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Traducciones
-                </a>
-                <ul aria-labelledby="navbarDropdown2">
-                <li>
-                    <a href="/traducciones/bo3deluxe.html">Call of Duty: Black Ops III - Español Latino (Mod Deluxe)</a>
-                </li><br>
-                <li>
-                    <a href="/traducciones/bolatino.html">Call of Duty: Black Ops - Español Latino</a>
-                </li>
-                <br>
-                <li>
-                    <a href="https://gamebanana.com/mods/54473">Persona 5 PS3 - Español Mod</a>
-                </li>
-                </ul>
-            </li>
-            <li class="nav-item dropdown hide-mobile2">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Guías
-                </a>
-                <ul class="dropdown-menu megamenu text-white bg-black" aria-labelledby="navbarDropdown">
-                <div class="row">
-                    <!-- <div class="col">
-                    <ul class="list-unstyled">
-                        <li>
-                        <a href="guias/legodimensionslatino.html"><img class="rounded" src="assets/img/LD_logo.png"
-                            alt="imagen1" width="100%" /></a>
-                        </li>
-                    </ul>
-                    </div> -->
                     <div class="col">
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled mb-0 mt-4">
                         <li>
-                        <a href="guias/pq2espanol.html"><img class="rounded" src="assets/img/pq2esp.png" alt="imagen1"
+                        <a href="traducciones/pq2espanol.html"><img class="img-zoom rounded"
+                            src="assets/img/pq2.png" alt="imagen1"
                             width="100%" /></a>
                         </li>
                     </ul>
@@ -231,18 +156,25 @@
             <li class="hide-desktop2 nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown2" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">
-                Guías
+                Proyectos
                 </a>
-                <!-- <ul aria-labelledby="navbarDropdown2">
-                <li>
-                    <a href="guias/legodimensionslatino.html">Lego Dimensions - Español Latino (WIP)</a>
-                </li><br>
-                </ul> -->
                 <ul aria-labelledby="navbarDropdown2">
                 <li>
-                    <a href="guias/pq2espanol.html">Persona Q2 - Español Mod</a>
+                    <a href="/traducciones/blackopsiiilatino.html">Call of Duty: Black Ops III PC Español Latino</a>
                 </li><br>
+                <li>
+                    <a href="/traducciones/blackopslatino.html">Call of Duty: Black Ops Español Latino</a>
+                </li>
+                <br>
+                <li>
+                    <a href="https://gamebanana.com/mods/54473">Persona 5 PS3 Backport Español</a>
+                </li>
+                <br>
+                <li>
+                    <a href="/traducciones/pq2espanol.html">Persona Q2 - Traducción al Español</a>
+                </li>
                 </ul>
+                
             </li>
 
             <li class="nav-item">
