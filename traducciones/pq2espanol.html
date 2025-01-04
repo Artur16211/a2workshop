@@ -72,10 +72,28 @@
             frameborder="0" allowfullscreen>
         </iframe>
         <div class="video-overlay">
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+                    var video = document.querySelector('.video-overlay video');
+                    var fallbackImage = document.querySelector('.fallback-image');
+    
+                    if (isSafari) {
+                        video.style.display = 'none';
+                        fallbackImage.style.display = 'block';
+                    } else {
+                        fallbackImage.style.display = 'none';
+                    }
+                });
+            </script>
+
             <video autoplay loop muted class="logo">
                 <source src="../pq2/img/PQW2ENESPANOL.webm" type="video/webm">
                 <img src="../pq2/img/PQ2ENESPANOL STILL.png" alt="Logo" class="logo">
             </video>
+
+            <img src="../pq2/img/PQ2ENESPANOL STILL.png" alt="Logo" class="fallback-image" style="display: none;">
             
             <h1 class="text-white mt-4 h3"><b>PRÓXIMAMENTE</b></h1>
             <a href="#" class="btn btn-primary mt-2 border-5 disabled">Descargar</a>
