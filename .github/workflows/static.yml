@@ -46,21 +46,20 @@ jobs:
             base="${file%.*}"
             dir=$(dirname "$file")
             
-            # Ensure the new filename does not have multiple hashes
+            # Generate new file name with hash (avoid adding multiple hashes)
             new_name="${dir}/$(basename "${base}").${hash}.${ext}"
-            
-            # Rename the file
-            mv "$file" "$new_name"
-            echo "Renamed $file to $new_name"
+
+            # Rename the file only if the new name is different
+            if [ "$file" != "$new_name" ]; then
+              mv "$file" "$new_name"
+              echo "Renamed $file to $new_name"
+            fi
 
             # Update all references in HTML files
             find . -type f -name "*.html" | while read -r html_file; do
-              # Ensure only the original file name is replaced
               sed -i "s|$(basename "$file")|$(basename "$new_name")|g" "$html_file"
             done
           done
-
-
 
 
       # Configure Pages
