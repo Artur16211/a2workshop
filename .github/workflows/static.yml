@@ -33,16 +33,22 @@ jobs:
           # Generate a hash based on the timestamp
           HASH=$(date +%s)
 
-          # Find all relevant static files, excluding bootstrap.*.css and bootstrap.*.js
+          # Rename relevant static files, excluding bootstrap CSS/JS, and avoid double hashing
           find . -type f \( -name "*.css" -o -name "*.js" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" -o -name "*.webp" \) ! -name "bootstrap*.css" ! -name "bootstrap*.js" | while read file; do
             DIR=$(dirname "$file")
             BASENAME=$(basename "$file")
             EXT="${BASENAME##*.}"
             BASENAME_NOEXT="${BASENAME%.*}"
+
+            # Skip files that already contain the hash
+            if [[ "$BASENAME_NOEXT" == *"-${HASH}"* ]]; then
+              continue
+            fi
+
             NEWNAME="${DIR}/${BASENAME_NOEXT}-${HASH}.${EXT}"
             mv "$file" "$NEWNAME"
 
-            # Replace references to the old file name in HTML and CSS files
+            # Update references in HTML and CSS files
             find . -type f \( -name "*.html" -o -name "*.css" \) -exec sed -i "s|${BASENAME}|${BASENAME_NOEXT}-${HASH}.${EXT}|g" {} \;
           done
 
