@@ -33,34 +33,21 @@ jobs:
           # Temporary file for replacing references
           temp_html=".temp_html"
           # Iterate over static files and rename them with a hash
-          find . -type f \( -name "*.css" -o -name "*.js" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" -o -name "*.webp" -o -name "*.webm" \) | while read -r file; do
-            # Skip files starting with "bootstrap" for .css and .js
-            if [[ "$(basename "$file")" =~ ^bootstrap.*\.(css|js)$ ]]; then
-              echo "Skipping file: $file"
-              continue
-            fi
-
+          for file in $(find . -type f \( -name "*.css" -o -name "*.js" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" -o -name "*.webp" -o -name "*.webm" \)); do
             # Generate a hash based on file content
             hash=$(sha256sum "$file" | awk '{print $1}' | cut -c1-8)
             ext="${file##*.}"
             base="${file%.*}"
-            dir=$(dirname "$file")
-            
-            # Generate new file name with hash (avoid adding multiple hashes)
-            new_name="${dir}/$(basename "${base}").${hash}.${ext}"
-
-            # Rename the file only if the new name is different
-            if [ "$file" != "$new_name" ]; then
-              mv "$file" "$new_name"
-              echo "Renamed $file to $new_name"
-            fi
+            new_name="${base}.${hash}.${ext}"
+            mv "$file" "$new_name"
+            echo "Renamed $file to $new_name"
 
             # Update all references in HTML files
-            find . -type f -name "*.html" | while read -r html_file; do
-              sed -i "s|$(basename "$file")|$(basename "$new_name")|g" "$html_file"
+            for html_file in $(find . -type f -name "*.html"); do
+              sed "s|${file}|${new_name}|g" "$html_file" > "$temp_html"
+              mv "$temp_html" "$html_file"
             done
           done
-
 
       # Configure Pages
       - name: Setup Pages
