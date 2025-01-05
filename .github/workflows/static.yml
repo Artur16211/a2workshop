@@ -16,7 +16,6 @@ permissions:
   id-token: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -40,7 +39,7 @@ jobs:
           hash=$(date +%s)
           for file in $(find . -type f -name "*.html"); do
             sed -i "s|href=\"\(.*\?\)\(css\|js\)\"|href=\"\1\2?v=$hash\"|g" "$file"
-            sed -i "s|src=\"\(.*\?\)\(js\|jpg\|png\|jpeg\)\"|src=\"\1\2?v=$hash\"|g" "$file"
+            sed -i "s|src=\"\(.*\?\)\(js\|jpg\|png\|jpeg\|webm\|webp\|gif\)\"|src=\"\1\2?v=$hash\"|g" "$file"
           done
 
       - name: Upload artifact
