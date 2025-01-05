@@ -54,7 +54,18 @@ jobs:
             find . -type f -name "*.html" | while read -r html_file; do
               sed -i "s|$(basename "$file")|$(basename "$new_name")|g" "$html_file"
             done
+      
+            # Update all references in CSS files
+            find . -type f -name "*.css" | while read -r css_file; do
+              sed -i "s|$(basename "$file")|$(basename "$new_name")|g" "$css_file"
+            done
+      
+            # Update all references in JS files
+            find . -type f -name "*.js" | while read -r js_file; do
+              sed -i "s|$(basename "$file")|$(basename "$new_name")|g" "$js_file"
+            done
           done
+      
       
       # Configure Pages
       - name: Setup Pages
