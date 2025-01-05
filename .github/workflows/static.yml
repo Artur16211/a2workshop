@@ -26,38 +26,38 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Generate hashes for static files
-      run: |
-        # Temporary file for replacing references
-        temp_html=".temp_html"
-        # Iterate over static files and rename them with a hash
-        find . -type f \( -name "*.css" -o -name "*.js" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" -o -name "*.webp" -o -name "*.webm" \) | while read -r file; do
-          # Skip files starting with "bootstrap" for .css and .js
-          if [[ "$(basename "$file")" =~ ^bootstrap.*\.(css|js)$ ]]; then
-            echo "Skipping file: $file"
-            continue
-          fi
-
-          # Generate a hash based on file content
-          hash=$(sha256sum "$file" | awk '{print $1}' | cut -c1-8)
-          ext="${file##*.}"
-          base="${file%.*}"
-          dir=$(dirname "$file")
-          new_name="${dir}/$(basename "${base}").${hash}.${ext}"
-          
-          # Rename the file
-          mv "$file" "$new_name"
-          echo "Renamed $file to $new_name"
-
-          # Update all references in HTML files
-          find . -type f -name "*.html" | while read -r html_file; do
-            # Avoid modifying the temporary file if it exists
-            if [[ "$html_file" != "$temp_html" ]]; then
-              echo "Updating references in $html_file"
-              # Replace the file references
-              sed -i "s|$(basename "$file")|$(basename "$new_name")|g" "$html_file"
+        run:
+          # Temporary file for replacing references
+          temp_html=".temp_html"
+          # Iterate over static files and rename them with a hash
+          find . -type f \( -name "*.css" -o -name "*.js" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" -o -name "*.webp" -o -name "*.webm" \) | while read -r file; do
+            # Skip files starting with "bootstrap" for .css and .js
+            if [[ "$(basename "$file")" =~ ^bootstrap.*\.(css|js)$ ]]; then
+              echo "Skipping file: $file"
+              continue
             fi
+
+            # Generate a hash based on file content
+            hash=$(sha256sum "$file" | awk '{print $1}' | cut -c1-8)
+            ext="${file##*.}"
+            base="${file%.*}"
+            dir=$(dirname "$file")
+            new_name="${dir}/$(basename "${base}").${hash}.${ext}"
+            
+            # Rename the file
+            mv "$file" "$new_name"
+            echo "Renamed $file to $new_name"
+
+            # Update all references in HTML files
+            find . -type f -name "*.html" | while read -r html_file; do
+              # Avoid modifying the temporary file if it exists
+              if [[ "$html_file" != "$temp_html" ]]; then
+                echo "Updating references in $html_file"
+                # Replace the file references
+                sed -i "s|$(basename "$file")|$(basename "$new_name")|g" "$html_file"
+              fi
+            done
           done
-        done
 
 
 
