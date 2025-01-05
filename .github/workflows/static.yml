@@ -38,8 +38,8 @@ jobs:
         run: |
           hash=$(date +%s)
           for file in $(find . -type f -name "*.html"); do
-            sed -i "s|\(href=\"\)\([^\"]*\)\(\.\(css\|js\|jpg\|png\|jpeg\|webm\|webp\|gif\)\)\"|\1\2\3?v=$hash\"|g" "$file"
-            sed -i "s|\(src=\"\)\([^\"]*\)\(\.\(js\|jpg\|png\|jpeg\|webm\|webp\|gif\)\)\"|\1\2\3?v=$hash\"|g" "$file"
+            sed -i 's|\(href="\)\([^\"]*\)\(\.\(css\|js\|jpg\|png\|jpeg\|webm\|webp\|gif\)\)"|\1\2\3?v='$hash'"|g' "$file"
+            sed -i 's|\(src="\)\([^\"]*\)\(\.\(js\|jpg\|png\|jpeg\|webm\|webp\|gif\)\)"|\1\2\3?v='$hash'"|g' "$file"
           done
 
       - name: Upload artifact
