@@ -26,10 +26,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Generate hashes for static files
-        # Generate hashes for static files
-        run: |
-        # Install required tools
-        sudo apt-get install -y jq
+      run: |
         # Temporary file for replacing references
         temp_html=".temp_html"
         # Iterate over static files and rename them with a hash
