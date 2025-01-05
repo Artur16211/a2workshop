@@ -52,7 +52,9 @@ jobs:
 
             # Update all references in HTML files
             find . -type f -name "*.html" | while read -r html_file; do
-              sed -i "s|$(basename "$file")|$(basename "$new_name")|g" "$html_file"
+              escaped_old_name=$(echo "$(basename "$file")" | sed 's/[][\.^$*]/\\&/g')
+              escaped_new_name=$(echo "$(basename "$new_name")" | sed 's/[][\.^$*]/\\&/g')
+              sed -i "s|$escaped_old_name|$escaped_new_name|g" "$html_file"
             done
           done
 
