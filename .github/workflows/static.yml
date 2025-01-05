@@ -2,26 +2,20 @@
 name: Deploy static content to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
     environment:
       name: github-pages
@@ -34,18 +28,16 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Add cache-busting query parameter
+      - name: Add cache busting
         run: |
-          hash=$(date +%s)
-          for file in $(find . -type f -name "*.html"); do
-            sed -i 's|\(href="\)\([^\"]*\)\(\.\(css\|js\|jpg\|png\|jpeg\|webm\|webp\|gif\)\)"|\1\2\3?v='$hash'"|g' "$file"
-            sed -i 's|\(src="\)\([^\"]*\)\(\.\(js\|jpg\|png\|jpeg\|webm\|webp\|gif\)\)"|\1\2\3?v='$hash'"|g' "$file"
-          done
+          # Generate a unique hash based on the current date
+          HASH=$(date +%s)
+          # Append the hash to all static file references in your HTML files
+          find . -type f \( -name "*.html" \) -exec sed -i "s/\(css\|js\|png\|jpg\|jpeg\|gif\|webp\)/&?v=$HASH/g" {} \;
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
           path: '.'
 
       - name: Deploy to GitHub Pages
