@@ -35,13 +35,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Generate cache-busting hash and rename files
+      - name: Add cache-busting query parameter
         run: |
-          for file in $(find . -type f -name "*.css" -o -name "*.js"); do
-            hash=$(md5sum $file | cut -d' ' -f1)
-            new_file="${file%.*}-$hash.${file##*.}"
-            mv "$file" "$new_file"
-            sed -i -E "s|$file|$new_file|g" $(find . -type f -name "*.html")
+          hash=$(date +%s)
+          for file in $(find . -type f -name "*.html"); do
+            sed -i -E "s|(href=\".*\.(css|js))\"|\1?v=$hash\"|g" $file
           done
 
       - name: Upload artifact
