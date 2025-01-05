@@ -40,19 +40,13 @@ jobs:
               continue
             fi
 
-            # Get the base file name and check if it already has a hash
-            filename=$(basename "$file")
-            if [[ "$filename" =~ \.[a-f0-9]{8}\. ]]; then
-              # File already contains a hash, skip renaming
-              echo "File already has a hash, skipping renaming: $file"
-              continue
-            fi
-
             # Generate a hash based on file content
             hash=$(sha256sum "$file" | awk '{print $1}' | cut -c1-8)
             ext="${file##*.}"
             base="${file%.*}"
             dir=$(dirname "$file")
+            
+            # Ensure the new filename does not have multiple hashes
             new_name="${dir}/$(basename "${base}").${hash}.${ext}"
             
             # Rename the file
@@ -61,9 +55,11 @@ jobs:
 
             # Update all references in HTML files
             find . -type f -name "*.html" | while read -r html_file; do
+              # Ensure only the original file name is replaced
               sed -i "s|$(basename "$file")|$(basename "$new_name")|g" "$html_file"
             done
           done
+
 
 
 
