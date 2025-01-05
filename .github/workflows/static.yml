@@ -37,12 +37,9 @@ jobs:
       - name: Add cache-busting query parameter
         run: |
           hash=$(date +%s)
-          # Modificar las referencias de CSS, JS, imágenes, etc.
           for file in $(find . -type f -name "*.html"); do
-            # Modificar los links de CSS
-            sed -i "s|\(href=\"[^\"]*\)\.\(css\|js\|jpg\|png\|jpeg\|webm\|webp\|gif\)\"|\1.\2?v=$hash\"|g" "$file"
-            # Modificar las referencias de JS e imágenes
-            sed -i "s|\(src=\"[^\"]*\)\.\(js\|jpg\|png\|jpeg\|webm\|webp\|gif\)\"|\1.\2?v=$hash\"|g" "$file"
+            sed -i "s|\(href=\"\)\([^\"]*\)\(\.\(css\|js\|jpg\|png\|jpeg\|webm\|webp\|gif\)\)\"|\1\2\3?v=$hash\"|g" "$file"
+            sed -i "s|\(src=\"\)\([^\"]*\)\(\.\(js\|jpg\|png\|jpeg\|webm\|webp\|gif\)\)\"|\1\2\3?v=$hash\"|g" "$file"
           done
 
       - name: Upload artifact
