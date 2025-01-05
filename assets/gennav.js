@@ -69,17 +69,17 @@
                         </a>
                         <ul aria-labelledby="navbarDropdown2">
                             <li>
-                                <a href="../traducciones/blackopsiiilatino.html">Call of Duty: Black Ops III PC Español Latino</a>
+                                <a href="../traducciones/blackopsiiilatino.html">Call of Duty: Black Ops III (PC) Español Latino</a>
                             </li><br>
                             <li>
-                                <a href="../traducciones/blackopslatino.html">Call of Duty: Black Ops - Español Latino</a>
+                                <a href="../traducciones/blackopslatino.html">Call of Duty: Black Ops Español Latino</a>
                             </li>
                             <br>
                             <li>
-                                <a href="https://gamebanana.com/mods/54473">Persona 5 PS3 - Español Mod</a>
+                                <a href="https://gamebanana.com/mods/54473">Persona 5 PS3 Backport Español</a>
                             </li><br>
                             <li>
-                                <a href="../traducciones/pq2espanol.html">Persona Q2 - Traducción al Español</a>
+                                <a href="../traducciones/pq2espanol.html">Persona Q2 Traducción al Español</a>
                             </li><br>
                         </ul>
                     </li>
@@ -160,18 +160,18 @@
                 </a>
                 <ul aria-labelledby="navbarDropdown2">
                 <li>
-                    <a href="/traducciones/blackopsiiilatino.html">Call of Duty: Black Ops III PC Español Latino</a>
+                    <a href="/traducciones/blackopsiiilatino.html">Call of Duty: Black Ops III (PC) Español Latino</a>
                 </li><br>
                 <li>
                     <a href="/traducciones/blackopslatino.html">Call of Duty: Black Ops Español Latino</a>
                 </li>
                 <br>
                 <li>
-                    <a href="https://gamebanana.com/mods/54473">Persona 5 PS3 Backport Español</a>
+                    <a href="https://gamebanana.com/mods/54473">Persona 5 (PS3) Backport Español</a>
                 </li>
                 <br>
                 <li>
-                    <a href="/traducciones/pq2espanol.html">Persona Q2 - Traducción al Español</a>
+                    <a href="/traducciones/pq2espanol.html">Persona Q2 Traducción al Español</a>
                 </li>
                 </ul>
                 

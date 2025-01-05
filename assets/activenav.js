@@ -11,7 +11,7 @@ if (window.location.href.includes("pq2espanol.html")) {
     document.getElementById("navbarDropdown5").classList.add("fw-bold");
     document.getElementById("navbarDropdown5").classList.add("text-decoration-underline");
 } else if (window.location.href.includes("blackopslatino.html")) {
-    document.getElementById("navbarDropdown5").innerHTML = "Proyectos | Black Ops - Español Latino";
+    document.getElementById("navbarDropdown5").innerHTML = "Proyectos | Black Ops Español Latino";
     // subrayar el texto
     document.getElementById("navbarDropdown5").classList.add("fw-bold");
     document.getElementById("navbarDropdown5").classList.add("text-decoration-underline");
