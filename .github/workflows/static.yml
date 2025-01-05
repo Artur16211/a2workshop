@@ -27,7 +27,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,12 +41,7 @@ jobs:
             hash=$(md5sum $file | cut -d' ' -f1)
             new_file="${file%.*}-$hash.${file##*.}"
             mv "$file" "$new_file"
-          done
-
-      - name: Update HTML references with hashed filenames
-        run: |
-          for file in $(find . -type f -name "*.html"); do
-            sed -i -E 's/(href|src)="([^"]+\.(css|js))"/\1="\2-'$hash'"/g' $file
+            sed -i -E "s|$file|$new_file|g" $(find . -type f -name "*.html")
           done
 
       - name: Upload artifact
