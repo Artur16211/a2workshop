@@ -27,47 +27,28 @@ jobs:
 
       - name: Generate hashes for static files
         run: |
-          # Install required tools
-          sudo apt-get install -y jq
-          # Temporary file for replacing references
-          temp_html=".temp_html"
-          # Iterate over static files and rename them with a hash
-          find . -type f \( -name "*.css" -o -name "*.js" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" -o -name "*.webp" -o -name "*.webm" \) | while read -r file; do
-            # Skip files starting with "bootstrap" for .css and .js
-            if [[ "$(basename "$file")" =~ ^bootstrap.*\.(css|js)$ ]]; then
-              echo "Skipping file: $file"
-              continue
-            fi
-      
-            # Generate a hash based on file content
-            hash=$(sha256sum "$file" | awk '{print $1}' | cut -c1-8)
+          # Find all relevant files excluding bootstrap-prefixed ones
+          find . -type f \( -iname '*.css' -o -iname '*.js' -o -iname '*.jpeg' -o -iname '*.jpg' -o -iname '*.png' -o -iname '*.webm' -o -iname '*.webp' \) ! -iname 'bootstrap*' > file_list.txt
+
+          # Generate hashes and rename files
+          while IFS= read -r file; do
+            hash=$(sha256sum "$file" | cut -d ' ' -f1)
             ext="${file##*.}"
             base="${file%.*}"
-            dir=$(dirname "$file")
-            new_name="${dir}/$(basename "${base}").${hash}.${ext}"
-            
-            # Rename the file
-            mv "$file" "$new_name"
-            echo "Renamed $file to $new_name"
-      
-            # Update all references in HTML files
-            find . -type f -name "*.html" | while read -r html_file; do
-              echo "Updating references in $html_file"
-              sed -i "s|$(basename "$file")|$(basename "$new_name")|g" "$html_file" || echo "Failed to update $html_file"
-            done
-      
-            # Update all references in CSS files
-            find . -type f -name "*.css" | while read -r css_file; do
-              sed -i "s|$(basename "$file")|$(basename "$new_name")|g" "$css_file"
-            done
-      
-            # Update all references in JS files
-            find . -type f -name "*.js" | while read -r js_file; do
-              sed -i "s|$(basename "$file")|$(basename "$new_name")|g" "$js_file"
-            done
+            mv "$file" "${base}-$hash.$ext"
+          done < file_list.txt
+
+          # Replace references in .css, .html, and .js
+          grep -rl --include=\*.{css,html,js} 'bootstrap' . | while read -r ref_file; do
+            while IFS= read -r file; do
+              ext="${file##*.}"
+              base="${file%.*}"
+              hash=$(sha256sum "$file" | cut -d ' ' -f1)
+              new_file="${base}-$hash.$ext"
+              sed -i "s|${file}|${new_file}|g" "$ref_file"
+            done < file_list.txt
           done
-      
-      
+
       # Configure Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
