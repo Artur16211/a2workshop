@@ -49,7 +49,7 @@ jobs:
             mv "$file" "$NEWNAME"
 
             # Update references only for files without hash in HTML and CSS files
-            find . -type f \( -name "*.html" -o -name "*.css" \) -exec sed -i -E "s|${BASENAME}(?!(?:-[0-9]{10})?\.${EXT})|${BASENAME_NOEXT}-${HASH}.${EXT}|g" {} \;
+            find . -type f \( -name "*.html" -o -name "*.css" \) -exec sed -i "s|${BASENAME}|${BASENAME_NOEXT}-${HASH}.${EXT}|g" {} +
           done
 
       - name: Upload artifact
