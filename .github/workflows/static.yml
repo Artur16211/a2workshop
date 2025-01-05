@@ -1,4 +1,4 @@
-# Simple workflow for deploying static content to GitHub Pages
+# Simple workflow for deploying static content to Pages
 name: Deploy static content to Pages
 
 on:
@@ -30,10 +30,21 @@ jobs:
 
       - name: Add cache busting
         run: |
-          # Generate a unique hash based on the current date
+          # Generate a hash based on the timestamp
           HASH=$(date +%s)
-          # Append the hash to all static file references in your HTML files
-          find . -type f \( -name "*.html" \) -exec sed -i "s/\(css\|js\|png\|jpg\|jpeg\|gif\|webp\)/&?v=$HASH/g" {} \;
+
+          # Find all relevant static files and rename them with the hash
+          find . -type f \( -name "*.css" -o -name "*.js" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" -o -name "*.webp" \) | while read file; do
+            DIR=$(dirname "$file")
+            BASENAME=$(basename "$file")
+            EXT="${BASENAME##*.}"
+            BASENAME_NOEXT="${BASENAME%.*}"
+            NEWNAME="${DIR}/${BASENAME_NOEXT}-${HASH}.${EXT}"
+            mv "$file" "$NEWNAME"
+
+            # Replace references to the old file name in HTML and CSS files
+            find . -type f \( -name "*.html" -o -name "*.css" \) -exec sed -i "s|${BASENAME}|${BASENAME_NOEXT}-${HASH}.${EXT}|g" {} \;
+          done
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
