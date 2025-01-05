@@ -39,7 +39,7 @@ jobs:
         run: |
           hash=$(date +%s)
           for file in $(find . -type f -name "*.html"); do
-            sed -i -E "s|(href=\".*\.(css|js))\"|\1?v=$hash\"|g" $file
+            sed -i "s|\(href=\".*\.\(css\|js\)\)\"|\1?v=$hash\"|g" "$file"
           done
 
       - name: Upload artifact
