@@ -40,11 +40,6 @@ jobs:
             EXT="${BASENAME##*.}"
             BASENAME_NOEXT="${BASENAME%.*}"
 
-            # Skip files that already contain the hash
-            if [[ "$BASENAME_NOEXT" == *"-${HASH}"* ]]; then
-              continue
-            fi
-
             NEWNAME="${DIR}/${BASENAME_NOEXT}-${HASH}.${EXT}"
             mv "$file" "$NEWNAME"
 
