@@ -46,14 +46,6 @@
                                 <div class="col">
                                     <ul class="list-unstyled mb-0 mt-4">
                                         <li>
-                                            <a href="https://gamebanana.com/mods/54473"><img class="img-zoom rounded"
-                                                    src="../assets/img/p5full.jpg" alt="imagen1" width="100%" /></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col">
-                                    <ul class="list-unstyled mb-0 mt-4">
-                                        <li>
                                             <a href="../traducciones/pq2espanol.html"><img class="img-zoom rounded"
                                                     src="../assets/img/pq2.png" alt="imagen1" width="100%" /></a>
                                         </li>
@@ -75,9 +67,6 @@
                                 <a href="../traducciones/blackopslatino.html">Call of Duty: Black Ops Español Latino</a>
                             </li>
                             <br>
-                            <li>
-                                <a href="https://gamebanana.com/mods/54473">Persona 5 PS3 Backport Español</a>
-                            </li><br>
                             <li>
                                 <a href="../traducciones/pq2espanol.html">Persona Q2 Traducción al Español</a>
                             </li><br>
@@ -136,14 +125,6 @@
                     <div class="col">
                     <ul class="list-unstyled mb-0 mt-4">
                         <li>
-                        <a href="https://gamebanana.com/mods/54473"><img class="img-zoom rounded"
-                            src="assets/img/p5full.jpg" alt="imagen1" width="100%" /></a>
-                        </li>
-                    </ul>
-                    </div>
-                    <div class="col">
-                    <ul class="list-unstyled mb-0 mt-4">
-                        <li>
                         <a href="traducciones/pq2espanol.html"><img class="img-zoom rounded"
                             src="assets/img/pq2.png" alt="imagen1"
                             width="100%" /></a>
@@ -164,10 +145,6 @@
                 </li><br>
                 <li>
                     <a href="/traducciones/blackopslatino.html">Call of Duty: Black Ops Español Latino</a>
-                </li>
-                <br>
-                <li>
-                    <a href="https://gamebanana.com/mods/54473">Persona 5 (PS3) Backport Español</a>
                 </li>
                 <br>
                 <li>
