@@ -33,8 +33,8 @@ jobs:
           # Generate a hash based on the timestamp
           HASH=$(date +%s)
 
-          # Find all relevant static files and rename them with the hash
-          find . -type f \( -name "*.css" -o -name "*.js" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" -o -name "*.webp" \) | while read file; do
+          # Find all relevant static files, excluding bootstrap.*.css and bootstrap.*.js
+          find . -type f \( -name "*.css" -o -name "*.js" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" -o -name "*.webp" \) ! -name "bootstrap*.css" ! -name "bootstrap*.js" | while read file; do
             DIR=$(dirname "$file")
             BASENAME=$(basename "$file")
             EXT="${BASENAME##*.}"
