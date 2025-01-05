@@ -48,7 +48,7 @@ jobs:
               new_file=$(echo "$line" | cut -d ' ' -f 3)
               old_file_rel=${old_file#./}
               new_file_rel=${new_file#./}
-              grep -rl "$old_file_rel" --include=\*.{css,html,js} | xargs sed -i "s|$old_file_rel|$new_file_rel|g"
+              grep -rl "$old_file_rel" --include=\*.{css,html,js} . | xargs -r sed -i "s|$old_file_rel|$new_file_rel|g"
             done < hash_mapping.txt
           fi
 
