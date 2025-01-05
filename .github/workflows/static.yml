@@ -33,6 +33,12 @@ jobs:
           temp_html=".temp_html"
           # Iterate over static files and rename them with a hash
           find . -type f \( -name "*.css" -o -name "*.js" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" -o -name "*.webp" -o -name "*.webm" \) | while read -r file; do
+            # Skip files starting with "bootstrap" for .css and .js
+            if [[ "$(basename "$file")" =~ ^bootstrap.*\.(css|js)$ ]]; then
+              echo "Skipping file: $file"
+              continue
+            fi
+
             # Generate a hash based on file content
             hash=$(sha256sum "$file" | awk '{print $1}' | cut -c1-8)
             ext="${file##*.}"
@@ -49,6 +55,7 @@ jobs:
               sed -i "s|$(basename "$file")|$(basename "$new_name")|g" "$html_file"
             done
           done
+
 
 
       # Configure Pages
