@@ -52,7 +52,10 @@ jobs:
       
             # Update all references in HTML files
             find . -type f -name "*.html" | while read -r html_file; do
+              echo "Updating references in $html_file"
               sed -i "s|$(basename "$file")|$(basename "$new_name")|g" "$html_file"
+              # Optional: Verify replacement
+              grep "$(basename "$new_name")" "$html_file"
             done
       
             # Update all references in CSS files
