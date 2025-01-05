@@ -28,25 +28,6 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Add cache busting
-        run: |
-          # Generate a hash based on the timestamp
-          HASH=$(date +%s)
-
-          # Rename relevant static files, excluding bootstrap CSS/JS
-          find . -type f \( -name "*.css" -o -name "*.js" -o -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" -o -name "*.gif" -o -name "*.webp" \) ! -name "bootstrap*.css" ! -name "bootstrap*.js" | while read file; do
-            DIR=$(dirname "$file")
-            BASENAME=$(basename "$file")
-            EXT="${BASENAME##*.}"
-            BASENAME_NOEXT="${BASENAME%.*}"
-
-            NEWNAME="${DIR}/${BASENAME_NOEXT}-${HASH}.${EXT}"
-            mv "$file" "$NEWNAME"
-
-            # Update references only for files without hash in HTML and CSS files
-            find . -type f \( -name "*.html" -o -name "*.css" \) -exec sed -i "s|${BASENAME}|${BASENAME_NOEXT}-${HASH}.${EXT}|g" {} +
-          done
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
