@@ -339,6 +339,13 @@ t {
   }
 }
 
+@media (max-width: 1200px) {
+  .hide-mobile3 {
+    display: none !important;
+  }
+  
+}
+
 /* Estilos para el panel lateral */
 #sidebar {
   position: fixed;
