@@ -466,10 +466,14 @@ nav a:hover {
   z-index: 2;
 }
 
-.megamenu:hover .megamenu-content {
-  display: block;
-  margin-top: -10px !important;
+@media (min-width: 990px) {
+  .megamenu:hover .megamenu-content {
+    display: block;
+    margin-top: -10px !important;
+    margin-left: -150px !important;
+  }
 }
+
 
 .megamenu-content a {
   display: flex;
