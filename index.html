@@ -1,92 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/jpg" href="/assets/img/favicon.jpg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="assets/bootstrap/js/popper.min.js"></script>
+  <title>A2Workshop</title>
+  <link rel="stylesheet" href="assets/home.css" />
+  <link rel="icon" href="assets/img/favicon.jpg" />
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/index.css" />
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 
 <body>
-  <div id="navbar-container"></div>
-  <script src="/assets/gennav.js"></script>
-
-  <script src="/assets/activenav.js"></script>
-  <!-- Contenido -->
-  <style>
-    body {
-      background-color: #021425;
-    }
-
-    /* Establecer un ancho máximo para las imágenes en las tarjetas */
-    .card-img-top {
-      width: 100%;
-      /* Cambia este valor al tamaño deseado */
-      height: 150px;
-      /* Cambia este valor al tamaño deseado */
-      object-fit: cover;
-      /* Recortar la imagen para que se ajuste al tamaño especificado */
-      border-top-left-radius: 10px;
-      /* Bordes redondeados en la esquina superior izquierda de la imagen */
-      border-top-right-radius: 10px;
-      /* Bordes redondeados en la esquina superior derecha de la imagen */
-    }
-
-    .card {
-      border-radius: 10px;
-      /* Bordes redondeados */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      /* Sombra */
-      margin: 10px;
-      /* Separación entre las tarjetas */
-    }
-
-    .btn-primary {
-      background-color: #0053a1;
-      border-color: #021425;
-      box-shadow: 0 4px 8px rgba(70, 70, 70, 0.301);
-    }
-  </style>
-  <div class="container mt-4">
-    <div class="card-group">
-      <div class="card">
-        <img class="card-img-top" src="/assets/img/bo3full_.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Call of Duty: Black Ops III (PC) Español Latino</h5>
-          <p class="card-text"></p>
-          <a href="/traducciones/blackopsiiilatino.html" class="btn btn-primary">Ver más</a>
+  <div class="animated-background"></div>
+  <nav>
+    <div class="nav-container">
+      <div class="megamenu">
+        <a href="#">Proyectos</a>
+        <div class="megamenu-content">
+          <button class="close-btn">&times;</button>
+          <a href="/traducciones/blackopsiiilatino.html">
+            <img src="assets/img/bo3logo.png" alt="bo3lalogo"> (PC) Call of Duty: Black Ops III Traducción Español
+            Latino
+          </a>
+          <a href="/traducciones/blackopslatino.html">
+            <img src="assets/img/latinbo.jpg" alt="bolalogo">
+            (PC) Call of Duty: Black Ops Traducción Español Latino
+          </a>
+          <a href="/traducciones/pq2espanol.html">
+            <img src="assets/img/pq2.png" alt="pq2eslogo"> (3DS) Persona Q2 Traducción al Español
+          </a>
         </div>
       </div>
-      <div class="card">
-        <img class="card-img-top" src="/assets/img/bofull.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Call of Duty: Black Ops (PC) Español Latino</h5>
-          <p class="card-text"></p>
-          <a href="/traducciones/blackopslatino.html" class="btn btn-primary">Ver más</a>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="/assets/img/pq2.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Persona Q2 (3DS) Traducción al Español</h5>
-          <p class="card-text">
-          </p>
-          <a href="/traducciones/pq2espanol.html" class="btn btn-primary">Ver más</a>
-        </div>
-      </div>
+
+      <a href="/contacto.html">Contacto</a>
     </div>
-    <br><br>
+  </nav>
+  <div class="logo-container">
+    <img src="/assets/img/a2logo.png" alt="Logo">
   </div>
-  <br><br>
-
-
-
-  <script src="assets/bootstrap/js/bootstrap.js"></script>
-  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 </body>
+<script src="assets/bootstrap/js/bootstrap.js"></script>
+<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+<script src="assets/megamenu.js"></script>
 
 </html>
