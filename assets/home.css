@@ -108,9 +108,9 @@ nav a:hover {
   margin-bottom: 10px;
 }
 
-/* .megamenu-content a:hover {
+.megamenu-content a:hover {
   background: rgba(255, 255, 255, 0.2);
-} */
+}
 
 .megamenu-content img {
   max-width: 100px;
@@ -192,6 +192,6 @@ nav a:hover {
   z-index: 10000;
 }
 
-.close-btn:hover {
+/* .close-btn:hover {
   color: rgba(255, 255, 255, 0.7);
-}
+} */
