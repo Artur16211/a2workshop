@@ -27,11 +27,7 @@
 
     // Inserta el navbar en el elemento con id "navbar-container"
     // if in the url is "index.html or contact.html" show another navbar
-    if (window.location.href.includes("index.html") || window.location.href.includes("contacto.html")) {
-        document.getElementById("navbar-container").innerHTML = navbar2;
-    } else {
-        document.getElementById("navbar-container").innerHTML = navbar;
-    }
+    document.getElementById("navbar-container").innerHTML = navbar;
 
     // exec message
     // console.log("Navbar generado");

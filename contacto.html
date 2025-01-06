@@ -11,7 +11,18 @@
     <link rel="stylesheet" href="assets/contact.css" />
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
-
+<script>
+    $(document).ready(function () {
+      $('.megamenu > a').on('click', function (e) {
+          e.preventDefault();
+          $('.megamenu-content').fadeIn();
+      });
+  
+      $('.close-btn').on('click', function () {
+          $('.megamenu-content').fadeOut();
+      });
+  });
+  </script>
 <body>  
     <div id="navbar-container"></div>
     <script src="/assets/gennav.js"></script>
