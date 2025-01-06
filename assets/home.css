@@ -192,6 +192,6 @@ nav a:hover {
   z-index: 10000;
 }
 
-/* .close-btn:hover {
+.close-btn:hover {
   color: rgba(255, 255, 255, 0.7);
-} */
+}
