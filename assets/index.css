@@ -484,7 +484,7 @@ nav a:hover {
   margin-right: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   nav a {
     padding: 8px 15px;
   }
@@ -527,7 +527,7 @@ nav a:hover {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .close-btn {
     display: none;
   }
@@ -551,4 +551,10 @@ nav a:hover {
 
 .logo_nav {
   height: 100px;
+}
+
+@media (max-width: 1200px) {
+  .logo_nav {
+    height: 70px;
+  }
 }
