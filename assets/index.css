@@ -425,6 +425,18 @@ nav {
   gap: 15px;
 }
 
+@media (max-width: 990px) {
+  nav a {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 990px) {
+  nav a {
+    font-size: 24px;
+  }
+}
+
 nav a {
   color: white;
   text-decoration: none;
