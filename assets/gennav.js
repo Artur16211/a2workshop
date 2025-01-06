@@ -2,7 +2,7 @@
     const navbar = `
         <nav>
             <div class="nav-container">
-                <a href="/index.html"><img src="../assets/img/logo_og.png" alt="logo" class="logo_nav"></a>
+                <a href="/index.html"><img src="../assets/img/Logo_og.png" alt="logo" class="logo_nav"></a>
                 <div class="megamenu">
                     <a href="#">Proyectos</a>
                     <div class="megamenu-content">
