@@ -77,16 +77,16 @@ nav a:hover {
   transition: background 0.3s;
 }
 
-/* .megamenu:hover>a {
+.megamenu:hover>a {
   background: rgba(255, 255, 255, 0.2);
-} */
+}
 
 .megamenu-content {
   display: none;
   position: absolute;
   top: 40px;
   left: 0;
-  /* background-color: #333; */
+  background-color: #333;
   padding: 20px;
   border-radius: 5px;
   width: 600px;
@@ -108,9 +108,9 @@ nav a:hover {
   margin-bottom: 10px;
 }
 
-.megamenu-content a:hover {
+/* .megamenu-content a:hover {
   background: rgba(255, 255, 255, 0.2);
-}
+} */
 
 .megamenu-content img {
   max-width: 100px;
