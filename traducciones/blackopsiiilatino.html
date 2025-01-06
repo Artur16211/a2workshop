@@ -340,7 +340,8 @@
               ha
               probado la
               compatibilidad hasta el día de la actualización con el cliente <b>
-                <t>boiii</t></b>, el parche de la comunidad <b>T7 Community Patch</b> y <b>Steam Deck</b>.<br />
+                <t>boiii</t>
+              </b>, el parche de la comunidad <b>T7 Community Patch</b> y <b>Steam Deck</b>.<br />
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512">
                 <path fill="#fff" fill-rule="evenodd"
                   d="M256 42.667c117.821 0 213.334 95.513 213.334 213.333c0 117.821-95.513 213.334-213.334 213.334c-117.82 0-213.333-95.513-213.333-213.334C42.667 138.18 138.18 42.667 256 42.667m0 42.667c-94.256 0-170.666 76.41-170.666 170.666c0 94.257 76.41 170.667 170.666 170.667c94.257 0 170.667-76.41 170.667-170.667c0-94.256-76.41-170.666-170.667-170.666m0 64c58.91 0 106.667 47.756 106.667 106.666S314.911 362.667 256 362.667c-58.91 0-106.666-47.756-106.666-106.667c0-58.91 47.756-106.666 106.666-106.666" />
@@ -360,16 +361,20 @@
               fáciles de conseguir abriendo nuestros archivos con programas como <b>Black Ops II Sound
                 Studio Extended</b> o <b>Greyhound</b> y aunque, no somos dueños de los mismos, agradeceríamos ser
               mencionados si usan nuestro mod como medio para adquirirlos.<br />
-              <div class="border">
-                <figure class="m-2">
-                  <blockquote class="blockquote">
-                    <p><b>Información sobre la versión de la Microsoft Store (16/12/2024):</b> Esta versión supuestamente tiene "spanish (mexico)", conseguimos esa versión y al intentar descargar el juego en ese idioma, simplemente no se descarga nada del idioma y el juego crashea al intentar iniciarlo, para los que quieran esa versión por el doblaje español latino, no la compren, no incluye realmente español latino.</p>
-                  </blockquote>
-                  <figcaption class="blockquote-footer">
-                    Publicado originalmente por <cite title="Source Title">Artur</cite>
-                  </figcaption>
-                </figure>
-              </div>
+            <div class="border">
+              <figure class="m-2">
+                <blockquote class="blockquote">
+                  <p><b>Información sobre la versión de la Microsoft Store (16/12/2024):</b> Esta versión supuestamente
+                    tiene "spanish (mexico)", conseguimos esa versión y al intentar descargar el juego en ese idioma,
+                    simplemente no se descarga nada del idioma y el juego crashea al intentar iniciarlo, para los que
+                    quieran esa versión por el doblaje español latino, no la compren, no incluye realmente español
+                    latino.</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                  Publicado originalmente por <cite title="Source Title">Artur</cite>
+                </figcaption>
+              </figure>
+            </div>
             </p>
           </div>
           <br>
@@ -700,10 +705,8 @@
             </script>
             <!-- # create new comment form -->
             <div class="container" id="tab1-comments">
-              <div class="form-group">
-                <textarea class="form-control" id="comment-text" rows="3" placeholder="Añadir un comentario"
-                  style="resize: none;"></textarea>
-              </div>
+              <textarea class="form-control" id="comment-text" rows="3" placeholder="Añadir un comentario"
+                style="resize: none;"></textarea>
               <div id="comments"></div>
               <br>
               <nav aria-label="Page navigation example">
@@ -731,38 +734,46 @@
         </div>
       </div>
     </div>
+    <br>
+  </div>
+  
+  <div class="container text-center mt-3">
+    <br>
+  </div>
 
-    <script>
-      function showTab(tab) {
-        const tab1Comments = document.getElementById('tab1-comments');
-        const tab2Comments = document.getElementById('tab2-comments');
 
-        if (tab === 'tab1') {
-          tab1Comments.style.display = 'block';
-          tab2Comments.style.display = 'none';
-        } else if (tab === 'tab2') {
-          tab1Comments.style.display = 'none';
-          tab2Comments.style.display = 'block';
-        } else {
-          console.error('Invalid tab:', tab);
+
+  <script>
+    function showTab(tab) {
+      const tab1Comments = document.getElementById('tab1-comments');
+      const tab2Comments = document.getElementById('tab2-comments');
+
+      if (tab === 'tab1') {
+        tab1Comments.style.display = 'block';
+        tab2Comments.style.display = 'none';
+      } else if (tab === 'tab2') {
+        tab1Comments.style.display = 'none';
+        tab2Comments.style.display = 'block';
+      } else {
+        console.error('Invalid tab:', tab);
+      }
+    }
+
+    // when the page loads, show the first tab
+    showTab('tab1');
+
+    // when the user clicks on a tab change the background color of the warning button
+    const tabButtons = document.querySelectorAll('.nav-pills .btn');
+    for (let i = 0; i < tabButtons.length; i++) {
+      tabButtons[i].addEventListener('click', function () {
+        for (let j = 0; j < tabButtons.length; j++) {
+          tabButtons[j].classList.remove('activeborder');
         }
-      }
+        this.classList.add('activeborder');
+      });
+    }
 
-      // when the page loads, show the first tab
-      showTab('tab1');
-
-      // when the user clicks on a tab change the background color of the warning button
-      const tabButtons = document.querySelectorAll('.nav-pills .btn');
-      for (let i = 0; i < tabButtons.length; i++) {
-        tabButtons[i].addEventListener('click', function () {
-          for (let j = 0; j < tabButtons.length; j++) {
-            tabButtons[j].classList.remove('activeborder');
-          }
-          this.classList.add('activeborder');
-        });
-      }
-
-    </script>
+  </script>
 </body>
 
 </html>
