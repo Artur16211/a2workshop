@@ -42,6 +42,8 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
+  box-shadow: none;
 }
 
 .nav-container {
