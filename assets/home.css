@@ -1,11 +1,16 @@
-﻿body {
+﻿@font-face {
+  font-family: 'motiva';
+  src: url('font/MotivaSansRegular.woff.ttf') format('truetype');
+}
+
+body {
   margin: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: Arial, sans-serif;
+  font-family: 'motiva';
   color: white;
   overflow: hidden;
 }

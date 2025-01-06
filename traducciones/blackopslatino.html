@@ -13,7 +13,18 @@
     <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
-
+<script>
+    $(document).ready(function () {
+      $('.megamenu > a').on('click', function (e) {
+          e.preventDefault();
+          $('.megamenu-content').fadeIn();
+      });
+  
+      $('.close-btn').on('click', function () {
+          $('.megamenu-content').fadeOut();
+      });
+  });
+  </script>
 <body>
     <button id="sidebar-toggle" class="btn btn-primary hide-desktop">
         <span class="iconify" data-icon="bi:person-lines-fill" style="color: white;"></span>
