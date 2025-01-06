@@ -294,22 +294,20 @@ t {
   color: #ffffff;
 }
 
-.navbar-toggler {
+/* .navbar-toggler {
   border-color: #ffffff;
   background-color: transparent;
 }
 
 .titlepage {
-  /* center the page title */
   text-align: center;
   justify-content: center;
 }
 
 .bg-navbar {
   background-color: #1e2836;
-  /* rounded corners for the top nav */
   border-radius: 0 0 10px 10px;
-}
+} */
 
 @media (max-width: 992px) {
   .hide-mobile2 {
@@ -393,4 +391,154 @@ t {
   margin-left: -45px;
   margin-top: 302px;
 
+}
+
+/* Navbar 2 */
+nav {
+  position: relative;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  box-shadow: none;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.megamenu {
+  position: relative;
+}
+
+.megamenu>a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.megamenu:hover>a {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.megamenu-content {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 5px;
+  width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.megamenu:hover .megamenu-content {
+  display: block;
+  margin-top: -10px !important;
+}
+
+.megamenu-content a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.megamenu-content a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.megamenu-content img {
+  max-width: 100px;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  nav a {
+    padding: 8px 15px;
+  }
+
+  /* Megamenú a pantalla completa en dispositivos móviles */
+  .megamenu-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 40px;
+    box-shadow: none;
+    border-radius: 0;
+    z-index: 9999;
+    display: none;
+    overflow-y: auto;
+  }
+
+  .megamenu-content a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+
+  .megamenu-content img {
+    max-width: 50px;
+    max-height: 50px;
+    flex-shrink: 0;
+  }
+
+  .megamenu:hover .megamenu-content {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .close-btn {
+    display: none;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.close-btn:hover {
+  color: rgba(255, 255, 255, 0.7);
 }

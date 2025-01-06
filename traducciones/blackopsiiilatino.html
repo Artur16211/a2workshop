@@ -13,7 +13,18 @@
   <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
+<script>
+  $(document).ready(function () {
+    $('.megamenu > a').on('click', function (e) {
+        e.preventDefault();
+        $('.megamenu-content').fadeIn();
+    });
 
+    $('.close-btn').on('click', function () {
+        $('.megamenu-content').fadeOut();
+    });
+});
+</script>
 <body>
   <button id="sidebar-toggle" class="btn btn-primary hide-desktop">
     <span class="iconify" data-icon="bi:person-lines-fill" style="color: white;"></span>
@@ -709,7 +720,7 @@
                 style="resize: none;"></textarea>
               <div id="comments"></div>
               <br>
-              <nav aria-label="Page navigation example">
+              <div aria-label="Page navigation example">
                 <ul class="pagination">
                   <li class="page-item"><a class="page-link" href="#comments">1</a></li>
                   <li class="page-item"><a class="page-link"
@@ -721,7 +732,7 @@
                       href="https://steamcommunity.com/sharedfiles/filedetails/?id=2819323099#commentthread_PublishedFile_Public_76561198851405406_2819323099_area">>></a>
                   </li>
                 </ul>
-              </nav>
+              </div>
             </div>
             <div id="tab2-comments">
               <script src="https://giscus.app/client.js" data-repo="Artur16211/a2workshop" data-repo-id="R_kgDOJct79w"
@@ -736,7 +747,7 @@
     </div>
     <br>
   </div>
-  
+
   <div class="container text-center mt-3">
     <br>
   </div>
