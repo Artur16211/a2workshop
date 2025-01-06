@@ -25,32 +25,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate hashes for static files
-        run: |
-          # Encuentra todos los archivos relevantes excepto los que empiezan con 'bootstrap'
-          find . -type f \( -iname '*.css' -o -iname '*.js' -o -iname '*.jpeg' -o -iname '*.jpg' -o -iname '*.png' -o -iname '*.webm' -o -iname '*.webp' -o -iname '*.gif' \) ! -iname 'bootstrap*' | while read file; do
-            # Genera el hash basado en el contenido del archivo
-            hash=$(sha256sum "$file" | cut -d ' ' -f 1)
-            # Renombra el archivo con el hash
-            dir=$(dirname "$file")
-            base=$(basename "$file")
-            ext="${base##*.}"
-            name="${base%.*}"
-            new_name="$dir/$name-$hash.$ext"
-            mv "$file" "$new_name"
-            echo "$file -> $new_name" >> hash_mapping.txt
-          done
+      # - name: Generate hashes for static files
+      #   run: |
+      #     # Encuentra todos los archivos relevantes excepto los que empiezan con 'bootstrap'
+      #     find . -type f \( -iname '*.css' -o -iname '*.js' -o -iname '*.jpeg' -o -iname '*.jpg' -o -iname '*.png' -o -iname '*.webm' -o -iname '*.webp' -o -iname '*.gif' \) ! -iname 'bootstrap*' | while read file; do
+      #       # Genera el hash basado en el contenido del archivo
+      #       hash=$(sha256sum "$file" | cut -d ' ' -f 1)
+      #       # Renombra el archivo con el hash
+      #       dir=$(dirname "$file")
+      #       base=$(basename "$file")
+      #       ext="${base##*.}"
+      #       name="${base%.*}"
+      #       new_name="$dir/$name-$hash.$ext"
+      #       mv "$file" "$new_name"
+      #       echo "$file -> $new_name" >> hash_mapping.txt
+      #     done
 
-          # Actualiza las referencias en archivos .css, .html y .js
-          if [ -f hash_mapping.txt ]; then
-            while IFS= read -r line; do
-              old_file=$(echo "$line" | cut -d ' ' -f 1)
-              new_file=$(echo "$line" | cut -d ' ' -f 3)
-              old_file_rel=${old_file#./}
-              new_file_rel=${new_file#./}
-              grep -rl "$old_file_rel" --include=\*.{css,html,js} . | xargs -r sed -i "s|$old_file_rel|$new_file_rel|g"
-            done < hash_mapping.txt
-          fi
+      #     # Actualiza las referencias en archivos .css, .html y .js
+      #     if [ -f hash_mapping.txt ]; then
+      #       while IFS= read -r line; do
+      #         old_file=$(echo "$line" | cut -d ' ' -f 1)
+      #         new_file=$(echo "$line" | cut -d ' ' -f 3)
+      #         old_file_rel=${old_file#./}
+      #         new_file_rel=${new_file#./}
+      #         grep -rl "$old_file_rel" --include=\*.{css,html,js} . | xargs -r sed -i "s|$old_file_rel|$new_file_rel|g"
+      #       done < hash_mapping.txt
+      #     fi
 
       # Configure Pages
       - name: Setup Pages
