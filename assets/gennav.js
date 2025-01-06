@@ -2,7 +2,8 @@
     const navbar = `
         <nav>
             <div class="nav-container">
-                <a href="/index.html"><img src="../assets/img/logo.png" alt="logo" class="logo_nav"></a>
+                <a href="/index.html" class="hide-desktop"><img src="../assets/img/logo.png" alt="logo" class="logo_nav"></a>
+                <a href="/index.html" class="hide-mobile"><img src="../assets/img/a2logo.png" alt="logo" class="logo_nav"></a>
                 <div class="megamenu">
                     <a href="#">Proyectos</a>
                     <div class="megamenu-content">

@@ -210,13 +210,13 @@ t {
   text-decoration: line-through;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 990px) {
   .hide-mobile {
     display: none !important;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 990px) {
   .hide-desktop {
     display: none !important;
   }
@@ -228,13 +228,13 @@ t {
 }
 
 /* Establecer diferentes columnas para la cuadrícula en diferentes tamaños de pantalla */
-@media (max-width: 1199px) {
+@media (max-width: 990px) {
   .grid-container {
     grid-template-columns: repeat(1, 1fr);
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 990px) {
   .grid-container {
     grid-template-columns: repeat(4, 1fr);
     display: grid;
@@ -246,13 +246,13 @@ t {
   }
 
   /* Establecer diferentes columnas para la cuadrícula en diferentes tamaños de pantalla */
-  @media (max-width: 1199px) {
+  @media (max-width: 990px) {
     .grid-container2 {
       grid-template-columns: repeat(1, 1fr);
     }
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 990px) {
     .grid-container2 {
       grid-template-columns: repeat(2, 1fr);
       display: grid;
@@ -265,13 +265,13 @@ t {
   }
 
   /* Establecer diferentes columnas para la cuadrícula en diferentes tamaños de pantalla */
-  @media (max-width: 1199px) {
+  @media (max-width: 990px) {
     .grid-container3 {
       grid-template-columns: repeat(1, 1fr);
     }
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 990px) {
     .grid-container3 {
       grid-template-columns: repeat(1, 1fr);
       display: grid;
@@ -314,7 +314,7 @@ t {
   border-radius: 0 0 10px 10px;
 } */
 
-@media (max-width: 992px) {
+@media (max-width: 990px) {
   .hide-mobile2 {
     display: none !important;
   }
@@ -327,7 +327,7 @@ t {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 990px) {
   .hide-desktop2 {
     display: none !important;
   }
@@ -484,7 +484,7 @@ nav a:hover {
   margin-right: 10px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 990px) {
   nav a {
     padding: 8px 15px;
   }
@@ -527,7 +527,7 @@ nav a:hover {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 990px) {
   .close-btn {
     display: none;
   }
@@ -550,10 +550,10 @@ nav a:hover {
 }
 
 .logo_nav {
-  height: 100px;
+  height: 50px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 990px) {
   .logo_nav {
     height: 50px;
   }
