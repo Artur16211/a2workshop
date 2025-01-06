@@ -333,6 +333,12 @@ t {
   }
 }
 
+@media (min-width: 1200px) {
+  .hide-desktop3 {
+    display: none !important;
+  }
+}
+
 /* Estilos para el panel lateral */
 #sidebar {
   position: fixed;
