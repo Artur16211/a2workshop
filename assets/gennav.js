@@ -51,7 +51,7 @@
         </nav>
     `;
 
-    if (window.location.pathname === "/index.html") {
+    if (window.location.pathname === "/index.html", "/") {
         document.getElementById("navbar-container").innerHTML = navbar2;
     }
     else {
