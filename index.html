@@ -5,12 +5,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A2Workshop</title>
-  <link rel="stylesheet" href="assets/home.css" />
   <link rel="icon" href="assets/img/favicon.jpg" />
   <meta name="theme-color" content="#000000">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <link rel="stylesheet" href="assets/home.css" />
 </head>
+<script>
+  $(document).ready(function () {
+    $('.megamenu > a').on('click', function (e) {
+      e.preventDefault();
+      $('.megamenu-content').fadeIn();
+    });
+
+    $('.close-btn').on('click', function () {
+      $('.megamenu-content').fadeOut();
+    });
+  });
+</script>
 
 <body>
   <div class="animated-background"></div>
@@ -43,6 +55,5 @@
 </body>
 <script src="assets/bootstrap/js/bootstrap.js"></script>
 <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-<script src="assets/megamenu.js"></script>
 
 </html>
