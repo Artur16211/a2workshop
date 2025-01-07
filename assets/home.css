@@ -113,7 +113,12 @@ nav a:hover {
 
 .megamenu:hover .megamenu-content {
   display: block;
-  margin-top: -10px !important;
+}
+
+@media (min-width: 768px) {
+  .megamenu:hover .megamenu-content {
+    margin-top: -10px !important;
+  }
 }
 
 .megamenu-content a {
