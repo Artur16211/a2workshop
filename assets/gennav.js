@@ -51,12 +51,12 @@
         </nav>
     `;
 
-    if (window.location.pathname === "/index.html", "/") {
+    if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
         document.getElementById("navbar-container").innerHTML = navbar2;
-    }
-    else {
+    } else {
         document.getElementById("navbar-container").innerHTML = navbar;
     }
+    
 
 }
 
