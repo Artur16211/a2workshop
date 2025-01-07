@@ -2,58 +2,97 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>A2Workshop</title>
-  <link rel="icon" href="assets/img/favicon.jpg" />
+  <link rel="icon" href="assets/img/favicon.jpg">
   <meta name="theme-color" content="#000000">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <link rel="stylesheet" href="assets/home.css" />
-</head>
-<script>
-  $(document).ready(function () {
-    $('.megamenu > a').on('click', function (e) {
-      e.preventDefault();
-      $('.megamenu-content').fadeIn();
-    });
+  <link rel="stylesheet" href="assets/home.css">
+  <style>
+    @font-face {
+      font-family: 'motiva';
+      src: url('font/MotivaSansRegular.woff.ttf') format('truetype');
+    }
 
-    $('.close-btn').on('click', function () {
-      $('.megamenu-content').fadeOut();
-    });
-  });
-</script>
+    body {
+      font-family: 'motiva';
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .animated-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(-45deg, #1E1451, #521B16);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+      z-index: -1;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      z-index: 1;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin: 0 10px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .logo-container img {
+      max-width: 300px;
+      height: auto;
+    }
+  </style>
+</head>
 
 <body>
-   <nav class="bg-transparent"> <!-- Quitar -->
-    <div class="nav-container ">
-      <div class="megamenu">
-        <a href="#">Proyectos</a>
-        <div class="megamenu-content">
-          <button class="close-btn">&times;</button>
-          <a href="/traducciones/blackopsiiilatino.html">
-            <img src="assets/img/bo3logo.png" alt="bo3lalogo"> (PC) Call of Duty: Black Ops III Traducción Español
-            Latino
-          </a>
-          <a href="/traducciones/blackopslatino.html">
-            <img src="assets/img/latinbo.jpg" alt="bolalogo">
-            (PC) Call of Duty: Black Ops Traducción Español Latino
-          </a>
-          <a href="/traducciones/pq2espanol.html">
-            <img src="assets/img/pq2.png" alt="pq2eslogo"> (3DS) Persona Q2 Traducción al Español
-          </a>
-        </div>
-      </div>
-
-      <a href="/contacto.html">Contacto</a>
-    </div>
+  <nav>
+    <a href="#">Proyectos</a>
+    <a href="/contacto.html">Contacto</a>
   </nav>
   <div class="animated-background"></div>
   <div class="logo-container">
     <img src="/assets/img/a2logo.png" alt="Logo">
   </div>
+  <script src="assets/bootstrap/js/bootstrap.js"></script>
 </body>
-<script src="assets/bootstrap/js/bootstrap.js"></script>
-<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 
 </html>
