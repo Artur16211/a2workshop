@@ -55,8 +55,7 @@
         document.getElementById("navbar-container").innerHTML = navbar2;
     } else {
         document.getElementById("navbar-container").innerHTML = navbar;
-    }
-    
+    }    
 
 }
 
