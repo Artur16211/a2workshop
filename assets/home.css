@@ -1,1 +1,69 @@
-﻿
+﻿@font-face {
+  font-family: 'motiva';
+  src: url('font/MotivaSansRegular.woff.ttf') format('truetype');
+}
+
+body {
+  font-family: 'motiva';
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+}
+
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #1E1451, #521B16);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  z-index: 1;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 0 10px;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.logo-container img {
+  max-width: 300px;
+  height: auto;
+}
