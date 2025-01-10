@@ -29,20 +29,15 @@
 <body>
     <script>
         $(document).ready(function () {
-            // Obtén el botón y el panel lateral por sus ID
             const $sidebarToggle = $("#sidebar-toggle");
             const $sidebarClose = $("#sidebar-close");
             const $sidebar = $("#sidebar");
 
-            // Agrega un evento click al botón de cierre
             $sidebarClose.on("click", function () {
-                // Oculta el panel lateral
                 $sidebar.removeClass("show");
             });
 
-            // Agrega un evento click al botón de mostrar/ocultar
             $sidebarToggle.on("click", function () {
-                // Alterna la clase 'show' para mostrar u ocultar el panel
                 $sidebar.toggleClass("show");
             });
         });
@@ -114,7 +109,7 @@
     <div id="navbar-container"></div>
     <script src="../assets/js/gennav.js"></script>
  
-    <!-- Header -->
+    <!-- Header Desk -->
     <div class="hide-mobile2 container container-content text-white bg-guideheader mt-3 rounded-5">
         <div class="row">
             <div class="col-2">
@@ -394,7 +389,6 @@
                     <div class="container mt-4">
                         <h2 class="fw-bold fs-2 text-center">Comentarios</h2>
                         <br>
-                        <!-- Botones de las pestañas -->
                         <ul class="nav nav-pills hide-mobile">
                             <li class="nav-item"><button onclick="showTab('tab2')"
                                     class="btn btn-warning activeborder fs-5 fw-bold" aria-current="page">Web</button>
@@ -420,7 +414,6 @@
                                 }
                             });
                         </script>
-                        <!-- # create new comment form -->
                         <div class="container" id="tab1-comments">
                             <div class="form-group">
                                 <textarea class="form-control" id="comment-text" rows="3"
@@ -536,71 +529,58 @@
 <script src="../deps/jszip.min.js"></script>
 <script src="../assets/steamcomments.js"></script>
 <script>
-    // Obtén todos los elementos con la clase "card-hover"
     var cards = document.getElementsByClassName("card-hover");
 
-    // Agrega eventos de escucha para el evento "mouseenter" (entrar) y "mouseleave" (salir)
     for (var i = 0; i < cards.length; i++) {
         cards[i].addEventListener("mouseenter", function () {
-            this.classList.add("card-hover"); // Agrega la clase "card-hover"
+            this.classList.add("card-hover");
         });
 
         cards[i].addEventListener("mouseleave", function () {
-            this.classList.remove("card-hover"); // Elimina la clase "card-hover"
+            this.classList.remove("card-hover");
         });
     }
 </script>
 
 <script>
     $(document).ready(function () {
-        // Escuchar los clics en los enlaces de la lista
         $('.list-group-item').click(function () {
-            // Remover la clase 'active' de todos los enlaces
             $('.list-group-item').removeClass('active');
 
-            // Agregar la clase 'active' al enlace clicado
             $(this).addClass('active');
         });
     });
 </script>
 <script>
-    // Función que verifica la resolución y cambia la clase del div
     function updateDivClass() {
         const divElement = document.getElementById('changemobile');
 
         if (window.matchMedia('(max-width: 1199px)').matches) {
-            // Si la resolución es menor a 1200 píxeles, cambia la clase
             divElement.classList.remove('col-9');
             divElement.classList.add('col');
         } else {
-            // Si la resolución es 1200 píxeles o mayor, restablece la clase original
             divElement.classList.remove('col');
             divElement.classList.add('col-9');
         }
     }
 
-    // Llama a la función al cargar la página y cada vez que la ventana cambie de tamaño
     window.addEventListener('load', updateDivClass);
     window.addEventListener('resize', updateDivClass);
 
 </script>
 <script>
-    // Función que verifica la resolución y cambia la clase del div
     function updateDivClass() {
         const divElement = document.getElementById('changemobile2');
 
         if (window.matchMedia('(max-width: 1199px)').matches) {
-            // Si la resolución es menor a 1200 píxeles, cambia la clase
             divElement.classList.remove('col-9');
             divElement.classList.add('col');
         } else {
-            // Si la resolución es 1200 píxeles o mayor, restablece la clase original
             divElement.classList.remove('col');
             divElement.classList.add('col-9');
         }
     }
 
-    // Llama a la función al cargar la página y cada vez que la ventana cambie de tamaño
     window.addEventListener('load', updateDivClass);
     window.addEventListener('resize', updateDivClass);
 
