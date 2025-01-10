@@ -13,7 +13,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    background-image: url('../pq2/img/black-dots.png');
+    background-image: url('../pq2/img/bg/black-dots.png');
 }
 
 .font-title {
@@ -71,13 +71,13 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1.5); /* Ajusta el video con zoom */
+    transform: translate(-50%, -50%) scale(1.5);
     width: 200%;
-    height: 200%; /* Ajusta el tamaño del video para llenar el contenedor */
-    object-fit: cover; /* Hace que el video cubra todo el área */
-    z-index: 0; /* Asegura que el video quede debajo de la navbar */
-    pointer-events: none; /* Desactiva la interacción del iframe */
-    filter: brightness(0.5); /* Filtro para oscurecer el video */
+    height: 200%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    filter: brightness(0.5);
 }
 
 .video-overlay {
@@ -104,11 +104,11 @@ body {
 }
 
 .bg_section1 {
-    background-image: url('../pq2/img/black-dots.png');
+    background-image: url('../pq2/img/bg/black-dots.png');
 }
 
 .bg_section2 {
-    background-image: url('../pq2/img/orange-dots.png');
+    background-image: url('../pq2/img/bg/orange-dots.png');
 }
 
 .section2 {
