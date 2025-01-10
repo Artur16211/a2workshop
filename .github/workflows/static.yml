@@ -21,17 +21,14 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-24.04
     steps:
-      # Checkout the repository
+
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Generate hashes for static files
         run: |
-          # Encuentra todos los archivos relevantes excepto los que empiezan con 'bootstrap'
           find . -type f \( -iname '*.css' -o -iname '*.js' -o -iname '*.jpeg' -o -iname '*.jpg' -o -iname '*.png' -o -iname '*.webm' -o -iname '*.webp' -o -iname '*.gif' \) ! -iname 'bootstrap*' | while read file; do
-            # Genera el hash basado en el contenido del archivo
             hash=$(sha256sum "$file" | cut -d ' ' -f 1)
-            # Renombra el archivo con el hash
             dir=$(dirname "$file")
             base=$(basename "$file")
             ext="${base##*.}"
@@ -41,7 +38,6 @@ jobs:
             echo "$file -> $new_name" >> hash_mapping.txt
           done
 
-          # Actualiza las referencias en archivos .css, .html y .js
           if [ -f hash_mapping.txt ]; then
             while IFS= read -r line; do
               old_file=$(echo "$line" | cut -d ' ' -f 1)
@@ -52,17 +48,14 @@ jobs:
             done < hash_mapping.txt
           fi
 
-      # Configure Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # Upload generated artifacts
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
 
-      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
