@@ -16,7 +16,7 @@ async function displayComments(jsonData) {
     const commentsObj = JSON.parse(jsonData);
     var commentsContainer = document.getElementById('comments');
 
-    const steamIconPath = '../img/Steam/steam_icon.png';
+    const steamIconPath = '../assets/img/Steam/steam_icon.png';
 
     commentsObj.comments.forEach(function (comment) {
       // Crear elementos HTML para cada comentario
